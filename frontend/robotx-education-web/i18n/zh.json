@@ -1,0 +1,48 @@
+{
+  "common": {
+    "language": "语言",
+    "english": "英文",
+    "chinese": "中文",
+    "menu": "菜单",
+    "open": "展开",
+    "close": "收起"
+  },
+  "header": {
+    "brand": "RobotX Education",
+    "nav": {
+      "home": "首页",
+      "about": "关于我们",
+      "courses": "课程",
+      "events": "活动",
+      "partners": "合作伙伴",
+      "donate": "捐赠"
+    },
+    "tracks": {
+      "aiTitle": "AI 课程",
+      "aiDesc": "学习机器学习、计算机视觉与 AI 实战部署。",
+      "robotTitle": "机器人课程",
+      "robotDesc": "从硬件搭建到行为控制，系统学习机器人开发。"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "用 AI 与机器人培养未来创造者",
+      "subtitle": "面向学生、家庭和学校的实践课程",
+      "description": "RobotX 教育通过工程项目帮助下一代建立技术自信。从编程与传感到自主系统，我们将抽象概念转化为可落地的真实作品。"
+    },
+    "ai": {
+      "title": "AI 课程介绍",
+      "description": "我们的 AI 课程通过项目制学习讲解机器学习、计算机视觉与模型部署。学生将训练小模型、分析数据，并完成可展示的实用 AI 功能。"
+    },
+    "robot": {
+      "title": "机器人课程介绍",
+      "description": "我们的机器人课程融合结构设计、电子电路与编程。学员将从组装机器人开始，连接传感器和控制器，并在真实场景中实现运动与决策。"
+    }
+  },
+  "footer": {
+    "contact-us" : "联系我们",
+    "phone":"电话: 800-519-0881",
+    "email": "邮箱:",
+    "copyright": "© 2026 RobotX 教育计划"
+  }
+}

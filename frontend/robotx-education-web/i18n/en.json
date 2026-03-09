@@ -1,0 +1,48 @@
+{
+  "common": {
+    "language": "Language",
+    "english": "English",
+    "chinese": "Chinese",
+    "menu": "Menu",
+    "open": "Open",
+    "close": "Close"
+  },
+  "header": {
+    "brand": "RobotX Education",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "courses": "Courses",
+      "events": "Events",
+      "partners": "Partners",
+      "donate": "Donate"
+    },
+    "tracks": {
+      "aiTitle": "AI Course",
+      "aiDesc": "Learn machine learning, vision, and practical AI deployment.",
+      "robotTitle": "Robot Course",
+      "robotDesc": "Build, program, and control robots from hardware to behavior."
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Build Future Creators with AI and Robotics",
+      "subtitle": "Hands-on programs for students, families, and schools",
+      "description": "RobotX Education helps the next generation build confidence through engineering projects. From coding and sensing to autonomous systems, our courses turn abstract concepts into real products."
+    },
+    "ai": {
+      "title": "AI Course Introduction",
+      "description": "Our AI course introduces core ideas in machine learning, computer vision, and model deployment through guided projects. Students train small models, analyze data, and ship practical AI features they can demonstrate."
+    },
+    "robot": {
+      "title": "Robot Course Introduction",
+      "description": "Our robotics track blends design, electronics, and coding. Learners assemble robots, connect sensors and controllers, and program movement and decision-making in real environments."
+    }
+  },
+  "footer": {
+    "contact-us" : "Contact Us",
+    "phone":"Phone: 800-519-0881",
+    "email": "Email:",
+    "copyright": "© 2026 Robot Education Initiative"
+  }
+}
