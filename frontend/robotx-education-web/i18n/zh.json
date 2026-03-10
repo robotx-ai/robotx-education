@@ -8,7 +8,7 @@
     "close": "收起"
   },
   "header": {
-    "brand": "RobotX Education",
+    "brand": "RobotX 教育",
     "nav": {
       "home": "首页",
       "about": "关于我们",
@@ -26,7 +26,7 @@
   },
   "home": {
     "hero": {
-      "title": "用 AI 与机器人培养未来创造者",
+      "title": "用 AI 与机器人构建未来",
       "subtitle": "面向学生、家庭和学校的实践课程",
       "description": "RobotX 教育通过工程项目帮助下一代建立技术自信。从编程与传感到自主系统，我们将抽象概念转化为可落地的真实作品。"
     },
@@ -39,10 +39,190 @@
       "description": "我们的机器人课程融合结构设计、电子电路与编程。学员将从组装机器人开始，连接传感器和控制器，并在真实场景中实现运动与决策。"
     }
   },
+  "courses": {
+    "hero": {
+      "title": "学机器人。学 AI。拥抱未来。"
+    },
+    "robot": {
+      "title": "机器人课程",
+      "subtitle": "我们将教授机器人搭建、操作控制以及后续二次开发能力，面向未来工程实践。",
+      "items": {
+        "originman": {
+          "title": "OriginMan 人形机器人开发",
+          "desc": "人形机器人搭建、运动控制与开发流程模板。"
+        }
+      }
+    },
+    "ai": {
+      "title": "AI 课程",
+      "subtitle": "我们将教授如何掌握 AI 工具并提升学习与工作效率。",
+      "items": {
+        "openclaw": {
+          "title": "OpenClaw AI 工作流",
+          "desc": "面向学生和创作者的实战 AI 工具与部署学习路径。"
+        }
+      }
+    }
+  },
+  "courseTemplate": {
+    "tocTitle": "目录"
+  },
+  "openclaw": {
+    "title": "OpenClaw AI 课程模板",
+    "intro": "此模板用于你后续粘贴正式教程内容。当前文本可替换为课程总览。",
+    "sections": {
+      "setup": {
+        "title": "环境准备",
+        "body": "在这里说明所需工具、账号配置与学习前置条件。",
+        "subA": {
+          "title": "步骤 1：安装与配置",
+          "body": "添加安装链接、版本说明和初始检查项。"
+        },
+        "subB": {
+          "title": "步骤 2：验证工作环境",
+          "body": "说明学习者如何确认本地或云端环境准备完成。"
+        }
+      },
+      "workflow": {
+        "title": "核心 AI 工作流",
+        "body": "在本节介绍提示词设计、模型交互和迭代测试方法。",
+        "subA": {
+          "title": "工具集成",
+          "body": "演示如何将 AI 输出连接到机器人或软件任务。"
+        }
+      },
+      "practice": {
+        "title": "实践项目",
+        "body": "添加一个动手小项目与学习评估清单。"
+      }
+    }
+  },
+  "originman": {
+    "title": "OriginMan 机器人课程模板",
+    "intro": "此模板用于你后续粘贴正式机器人教程内容。当前文本可替换为最终课程材料。",
+    "sections": {
+      "assembly": {
+        "title": "机器人组装与初始化",
+        "body": "说明硬件组件、组装顺序和安全检查步骤。",
+        "subA": {
+          "title": "机械结构搭建",
+          "body": "记录框架安装、电机连接和接口布局。"
+        },
+        "subB": {
+          "title": "电源与控制器检查",
+          "body": "添加启动检查清单与故障排查步骤。"
+        }
+      },
+      "motion": {
+        "title": "操作与运动控制",
+        "body": "介绍基础运动编程与操作控制逻辑。",
+        "subA": {
+          "title": "标定与测试",
+          "body": "添加运动标定流程与预期测试结果。"
+        }
+      },
+      "secondaryDev": {
+        "title": "二次开发",
+        "body": "提供传感器扩展、行为扩展与自定义模块思路。"
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "为什么家庭选择 RobotX",
+      "subtitle": "易懂、直观、并且具有启发性的学习体验"
+    },
+    "reasons": {
+      "title": "为什么选择我们的课程",
+      "understandableTitle": "内容易懂",
+      "understandableDesc": "我们将复杂的 AI 与机器人知识拆解为清晰步骤，学生能够真正理解并应用。",
+      "intuitiveTitle": "课程直观",
+      "intuitiveDesc": "每节课都强调先动手再理解，让学习成果更快可见。",
+      "multimediaTitle": "文字、图示与视频结合",
+      "multimediaDesc": "课程融合简明讲解、示意图片和演示视频，帮助学生高效掌握知识。"
+    },
+    "mission": {
+      "title": "我们的使命",
+      "description": "我们的使命是通过实践教育、创造力和社区影响力，帮助下一代接触并掌握最新的机器人与 AI 技术。"
+    },
+    "media": {
+      "title": "边看边做，学得更快",
+      "description": "阅读、观看和实操结合的学习路径，能显著提升学生理解和应用能力。"
+    }
+  },
+  "careers": {
+    "hero": {
+      "title": "加入 RobotX",
+      "subtitle": "加入我们的非营利团队，帮助学生获得面向未来的教育"
+    },
+    "openingsTitle": "招聘职位",
+    "card": {
+      "title": "活动运营承包岗位",
+      "location": "加州湾区",
+      "type": "承包"
+    },
+    "details": {
+      "title": "活动运营承包岗位",
+      "compensationLabel": "薪酬",
+      "compensationValue": "每小时 30-45 美元",
+      "jobTypeLabel": "工作类型",
+      "jobTypeValue": "承包",
+      "locationLabel": "地点",
+      "locationValue": "加州湾区",
+      "descriptionLabel": "职位描述",
+      "descriptionValue": "支持机器人与 AI 教育活动执行，负责现场协调、教学点位搭建，并在工作坊和校园活动中协助学生与家庭。",
+      "applyTitle": "申请该职位",
+      "submit": "提交申请",
+      "close": "关闭"
+    },
+    "form": {
+      "firstName": "名",
+      "lastName": "姓",
+      "email": "邮箱",
+      "resume": "简历附件",
+      "whyUs": "为什么选择我们？",
+      "placeholderWhyUs": "请说明你希望加入 RobotX 和该岗位的原因。"
+    }
+  },
+  "events": {
+    "hero": {
+      "title": "社区活动",
+      "subtitle": "动手工作坊、演示活动与校园合作"
+    },
+    "upcomingTitle": "近期活动",
+    "cards": {
+      "c1Title": "AI + 机器人公开工作坊",
+      "c1Meta": "加州圣何塞 | 周六",
+      "c1Desc": "学生和家长共同完成小型机器人项目并体验 AI 演示。",
+      "c2Title": "校园科技外展日",
+      "c2Meta": "湾区学校 | 工作日",
+      "c2Desc": "我们的讲师走进合作学校，开展有趣的科技实践课程。"
+    }
+  },
+  "donation": {
+    "hero": {
+      "title": "捐赠",
+      "subtitle": "帮助我们把机器人教育带给更多学生"
+    },
+    "content": {
+      "title": "向学校与高校捐赠机器人设备",
+      "description": "我们目前尚未接入 Stripe。如需通过我们的非营利组织向中小学、学院或大学捐赠机器人、套件或设备，请直接联系 info@usrobotx.com。"
+    }
+  },
+  "partners": {
+    "hero": {
+      "title": "成为合作伙伴",
+      "subtitle": "与我们合作，教育年轻一代"
+    },
+    "content": {
+      "title": "合作机会",
+      "description": "我们与学校、企业和社区机构合作，通过课程、活动和资源，扩大 AI 与机器人教育的覆盖范围。"
+    }
+  },
   "footer": {
-    "contact-us" : "联系我们",
-    "phone":"电话: 800-519-0881",
-    "email": "邮箱:",
+    "contact-us": "联系我们",
+    "phone": "电话: 800-519-0881",
+    "email": "邮箱: info@usrobotx.com",
     "copyright": "© 2026 RobotX 教育计划"
   }
 }

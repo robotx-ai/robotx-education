@@ -30,7 +30,7 @@ export default function Header() {
                 <Link href="/courses" className="inline-flex py-2">
                   {t("header.nav.courses")}
                 </Link>
-                <div className="invisible absolute right-0 top-full z-50 mt-2 w-[580px] rounded-xl border border-gray-100 bg-white p-4 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100">
+                <div className="invisible absolute left-1/2 -translate-x-1/2 top-full z-50 mt-2 w-[580px] rounded-xl border border-gray-100 bg-white p-4 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100">
                   <div className="grid grid-cols-2 gap-4">
                     <Link
                       href="/courses/ai/openclaw"

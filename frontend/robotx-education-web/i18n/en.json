@@ -26,7 +26,7 @@
   },
   "home": {
     "hero": {
-      "title": "Build Future Creators with AI and Robotics",
+      "title": "Build Future with AI and Robotics",
       "subtitle": "Hands-on programs for students, families, and schools",
       "description": "RobotX Education helps the next generation build confidence through engineering projects. From coding and sensing to autonomous systems, our courses turn abstract concepts into real products."
     },
@@ -39,10 +39,190 @@
       "description": "Our robotics track blends design, electronics, and coding. Learners assemble robots, connect sensors and controllers, and program movement and decision-making in real environments."
     }
   },
+  "courses": {
+    "hero": {
+      "title": "Learn Robotics. Learn AI. Embrace Future."
+    },
+    "robot": {
+      "title": "Robot Courses",
+      "subtitle": "We teach robotics setup, manipulation, and secondary development for future-ready engineering skills.",
+      "items": {
+        "originman": {
+          "title": "OriginMan Humanoid Development",
+          "desc": "Humanoid robot setup, motion control, and development workflow template."
+        }
+      }
+    },
+    "ai": {
+      "title": "AI Courses",
+      "subtitle": "We teach how to master AI tools and boost productivity in real project workflows.",
+      "items": {
+        "openclaw": {
+          "title": "OpenClaw AI Workflow",
+          "desc": "Practical AI tools and deployment learning path for students and creators."
+        }
+      }
+    }
+  },
+  "courseTemplate": {
+    "tocTitle": "Table of Contents"
+  },
+  "openclaw": {
+    "title": "OpenClaw AI Course Template",
+    "intro": "This template is prepared for your upcoming tutorial content. Replace this text with your real lesson overview.",
+    "sections": {
+      "setup": {
+        "title": "Environment Setup",
+        "body": "Describe required tools, account setup, and prerequisites for learners.",
+        "subA": {
+          "title": "Step 1: Install and Configure",
+          "body": "Add install links, version notes, and initial checks."
+        },
+        "subB": {
+          "title": "Step 2: Verify Workspace",
+          "body": "Explain how learners can verify their local or cloud workspace is ready."
+        }
+      },
+      "workflow": {
+        "title": "Core AI Workflow",
+        "body": "Explain prompt design, model interaction, and iterative testing in this section.",
+        "subA": {
+          "title": "Tool Integration",
+          "body": "Show how to connect AI output to real robot or software tasks."
+        }
+      },
+      "practice": {
+        "title": "Practice Project",
+        "body": "Add a hands-on mini project and evaluation checklist for students."
+      }
+    }
+  },
+  "originman": {
+    "title": "OriginMan Robot Course Template",
+    "intro": "This template is prepared for your upcoming robot tutorial content. Replace this text with your final course material.",
+    "sections": {
+      "assembly": {
+        "title": "Robot Assembly and Setup",
+        "body": "Describe hardware components, assembly sequence, and safety checks.",
+        "subA": {
+          "title": "Mechanical Setup",
+          "body": "Document frame assembly, motors, and connector layout."
+        },
+        "subB": {
+          "title": "Power and Controller Check",
+          "body": "Add startup checklist and troubleshooting steps."
+        }
+      },
+      "motion": {
+        "title": "Manipulation and Motion Control",
+        "body": "Introduce basic movement programming and manipulation control logic.",
+        "subA": {
+          "title": "Calibration and Testing",
+          "body": "Add motion calibration workflow and expected results."
+        }
+      },
+      "secondaryDev": {
+        "title": "Secondary Development",
+        "body": "Provide extension ideas for sensors, behaviors, and custom modules."
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Why Families Choose RobotX",
+      "subtitle": "Understandable, intuitive, and inspiring learning experiences"
+    },
+    "reasons": {
+      "title": "Why choose our courses",
+      "understandableTitle": "Understandable Learning",
+      "understandableDesc": "We break complex AI and robotics topics into clear steps that students can actually apply.",
+      "intuitiveTitle": "Intuitive Curriculum",
+      "intuitiveDesc": "Every lesson follows a practical build-first path, so learners see results quickly.",
+      "multimediaTitle": "Text, Images, and Video",
+      "multimediaDesc": "Our content combines short explanations, illustrative visuals, and hands-on demos."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "Our mission is to help the next generation engage with the latest robotics and AI technology through practical education, creativity, and community impact."
+    },
+    "media": {
+      "title": "Learn by Seeing and Building",
+      "description": "Students learn faster when they can read, watch, and build in the same lesson flow."
+    }
+  },
+  "careers": {
+    "hero": {
+      "title": "Careers at RobotX",
+      "subtitle": "Join our nonprofit team and help students access future-ready education"
+    },
+    "openingsTitle": "Open Positions",
+    "card": {
+      "title": "Event Operator Contractor",
+      "location": "San Francisco Bay Area, CA",
+      "type": "Contractor"
+    },
+    "details": {
+      "title": "Event Operator Contractor",
+      "compensationLabel": "Compensation",
+      "compensationValue": "$30-$45/hour",
+      "jobTypeLabel": "Job Type",
+      "jobTypeValue": "Contractor",
+      "locationLabel": "Location",
+      "locationValue": "San Francisco Bay Area, CA",
+      "descriptionLabel": "Job Description",
+      "descriptionValue": "Support robotics and AI education events, coordinate logistics, set up learning stations, and assist students and families during workshops and school activities.",
+      "applyTitle": "Apply for this role",
+      "submit": "Submit Application",
+      "close": "Close"
+    },
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "resume": "Resume Attachment",
+      "whyUs": "Why us?",
+      "placeholderWhyUs": "Share why you want to work with RobotX and this role."
+    }
+  },
+  "events": {
+    "hero": {
+      "title": "Community Events",
+      "subtitle": "Hands-on workshops, demos, and school collaborations"
+    },
+    "upcomingTitle": "Upcoming Events",
+    "cards": {
+      "c1Title": "AI + Robotics Open Workshop",
+      "c1Meta": "San Jose, CA | Saturday",
+      "c1Desc": "Students and parents build mini robotics projects and experience AI demos.",
+      "c2Title": "School Outreach Demo Day",
+      "c2Meta": "Bay Area Schools | Weekday",
+      "c2Desc": "Our instructors visit partner schools to run engaging technology sessions."
+    }
+  },
+  "donation": {
+    "hero": {
+      "title": "Donate",
+      "subtitle": "Help us bring robotics learning to more students"
+    },
+    "content": {
+      "title": "Donate Robots to Schools and Universities",
+      "description": "We are not yet set up with Stripe. If you would like to donate robots, kits, or equipment to schools, colleges, or universities through our nonprofit, please contact us directly at info@usrobotx.com."
+    }
+  },
+  "partners": {
+    "hero": {
+      "title": "Become a Partner",
+      "subtitle": "Collaborate with us to educate the younger generation"
+    },
+    "content": {
+      "title": "Partnership Opportunities",
+      "description": "We partner with schools, companies, and community organizations to expand access to AI and robotics education through programs, events, and resources."
+    }
+  },
   "footer": {
-    "contact-us" : "Contact Us",
-    "phone":"Phone: 800-519-0881",
-    "email": "Email:",
+    "contact-us": "Contact Us",
+    "phone": "Phone: 800-519-0881",
+    "email": "Email: info@usrobotx.com",
     "copyright": "© 2026 Robot Education Initiative"
   }
 }
