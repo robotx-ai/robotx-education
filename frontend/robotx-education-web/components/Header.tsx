@@ -33,29 +33,29 @@ export default function Header() {
                 <div className="invisible absolute left-1/2 -translate-x-1/2 top-full z-50 mt-2 w-[580px] rounded-xl border border-gray-100 bg-white p-4 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100">
                   <div className="grid grid-cols-2 gap-4">
                     <Link
-                      href="/courses/ai/openclaw"
+                      href="/courses#ai-course-grid"
                       className="rounded-lg border border-gray-200 p-3 transition hover:border-black"
                     >
                       <Image
                         src="/assets/home/openclaw-learn.webp"
                         alt="AI course"
-                        width={100}
-                        height={100}
-                        className="h-24 w-full rounded-2xl bg-sky-50 object-cover"
+                        width={200}
+                        height={200}
+                        className="h-40 w-full rounded-md object-contain"
                       />
                       <h3 className="mt-3 font-semibold">{t("header.tracks.aiTitle")}</h3>
                       <p className="mt-1 text-sm text-gray-600">{t("header.tracks.aiDesc")}</p>
                     </Link>
                     <Link
-                      href="/courses/robot/humanoid/originman"
+                      href="/courses#robot-course-grid"
                       className="rounded-lg border border-gray-200 p-3 transition hover:border-black"
                     >
                       <Image
-                        src="/window.svg"
+                        src="/assets/courses/originman/originman-1.png"
                         alt="Robot course"
-                        width={100}
-                        height={100}
-                        className="h-24 w-full rounded-md bg-amber-50 p-4 object-contain"
+                        width={200}
+                        height={200}
+                        className="h-40 w-full rounded-md object-contain"
                       />
                       <h3 className="mt-3 font-semibold">{t("header.tracks.robotTitle")}</h3>
                       <p className="mt-1 text-sm text-gray-600">{t("header.tracks.robotDesc")}</p>

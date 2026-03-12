@@ -65,9 +65,14 @@
     }
   },
   "courseTemplate": {
-    "tocTitle": "Table of Contents"
+    "tocTitle": "Table of Contents",
+    "pagesTitle": "Course Pages",
+    "pagesButtonLabel": "Course Pages"
   },
   "openclaw": {
+    "pages": {
+      "home": "Home"
+    },
     "title": "OpenClaw AI Course Template",
     "intro": "This template is prepared for your upcoming tutorial content. Replace this text with your real lesson overview.",
     "sections": {
@@ -98,32 +103,82 @@
     }
   },
   "originman": {
-    "title": "OriginMan Robot Course Template",
-    "intro": "This template is prepared for your upcoming robot tutorial content. Replace this text with your final course material.",
+    "pages": {
+      "home": "Home",
+      "quickStart": "Quick Start",
+      "userGuide": "User Guide"
+    },
+    "title": "OriginMan Robot Course",
+    "intro": "OriginMan is a future-oriented intelligent desktop humanoid robot and the first fully open-source ROS2 desktop humanoid robot project, aimed at letting every participant enjoy the fun of robot development.",
     "sections": {
-      "assembly": {
-        "title": "Robot Assembly and Setup",
-        "body": "Describe hardware components, assembly sequence, and safety checks.",
+      "openSource": {
+        "title": "Open Source Co-creation",
+        "body": "\"Open Sharing, Smart Future\" is OriginMan's evolutionary philosophy, looking forward to building the future of robotics with developers worldwide.",
         "subA": {
-          "title": "Mechanical Setup",
-          "body": "Document frame assembly, motors, and connector layout."
+          "title": "Open Source Ecosystem",
+          "body": "Providing source code for the control system, brain-cerebellum communication protocols, and motion editing software, helping every developer easily create their own \"intelligent brain,\" unleash unique creativity, and develop diverse applications."
         },
         "subB": {
-          "title": "Power and Controller Check",
-          "body": "Add startup checklist and troubleshooting steps."
+          "title": "Continuous Iteration",
+          "body": "Fear not the endless pursuit of truth, for each step forward brings its own joy. Backed by strong community support, both OriginMan and its developers continue to progress, with ongoing hardware and software iterations and regular version updates, letting us grow stronger together."
+        },
+        "subC": {
+          "title": "Comprehensive Content",
+          "body": "OriginMan is not just an open-source kit but your robotic friend. Complete with hardware, software, tutorials, video resources, and forum support, the rich software and hardware support helps you grow quickly."
         }
       },
-      "motion": {
-        "title": "Manipulation and Motion Control",
-        "body": "Introduce basic movement programming and manipulation control logic.",
+      "evolution": {
+        "title": "Intelligent Evolution Platform",
+        "body": "OriginMan is not just a hardware development platform but an evolving intelligent algorithm platform with unlimited possibilities.",
         "subA": {
-          "title": "Calibration and Testing",
-          "body": "Add motion calibration workflow and expected results."
+          "title": "Cognitive Core",
+          "body": "OriginMan natively carries the D-Robotics Development Board - RDK X5, with 10TOPS computing power supporting real-time visual inference and natural language processing. Pre-installed with a large model interaction system, it enables multi-turn dialogue understanding and AI intelligent interaction, offering a true intelligent robot development experience."
+        },
+        "subB": {
+          "title": "Rich Applications",
+          "body": "OriginMan uses ROS2 and TogetheROS Bot (D-Robotics's deeply optimized ROS open-source robot operating system) as its robot software system, compatible with many applications in the ROS ecosystem, ready to use out of the box. Rich built-in applications allow quick start with human imitation learning, visual line following, AI voice interaction, and other application development."
         }
       },
       "secondaryDev": {
         "title": "Secondary Development",
         "body": "Provide extension ideas for sensors, behaviors, and custom modules."
+      }
+    },
+    "quickStart": {
+      "title": "OriginMan Quick Start",
+      "intro": "Let's start using OriginMan!",
+      "sections": {
+        "boot": {
+          "title": "Power On",
+          "body": "(1) Turn on the main power switch. You can observe that the power light on OriginMan's back expansion board and the RDK X5 power indicator light up, while OriginMan's chest begins to glow white.\n\n(2) After waiting 10 seconds, you'll see OriginMan's chest light ring change from white to colorful, followed by OriginMan saying \"Hello, I'm OriginMan\". These actions indicate that OriginMan has successfully started up."
+        },
+        "remoteConnection": {
+          "title": "Remote Connection",
+          "body": "(1) Launch MobaXterm and remotely log in to OriginMan\n\n(2) Enter username and password: root (username), root (password)\n\n(3) Remote login successful"
+        },
+        "example1": {
+          "title": "Running Example (Dancing with the Robot)",
+          "body": "After having the robot imitate your actions, it's your turn to learn from the robot.\nAfter successful SSH connection, enter the following command to operate OriginMan:"
+        },
+        "poweroff": {
+          "title": "Power Off",
+          "body": "If you need to shut down the robot, you can enter the following command in the terminal to close the software system:",
+          "body1": "After waiting about 5 seconds, you can turn off the power switch on the robot controller, and the robot shutdown is complete."
+        }
+      }
+    },
+    "userGuide": {
+      "title": "OriginMan User Guide",
+      "intro": "During the following operations, you'll need some basic knowledge of robot development. We suggest you know the basic of python, linux, Ubuntu, ssh, ROS/ROS2 before proceed the following content.",
+      "sections": {
+        "control": {
+          "title": "Power On and Network Connection",
+          "body": "After opening your OriginMan package, you'll see the robot itself. Each OriginMan comes with its soul - the \"factory image.\"\n\nYou can start OriginMan by toggling the switch at the lower back of the robot.\n\nUpon successful startup, you'll see the chest light ring change from white to colorful, followed by OriginMan saying \"Hello, I'm OriginMan.\" This indicates the image has started successfully.\n\nOn OriginMan's back, if connected to a network, the Oled screen will display the IP address you need to connect to. If not connected, you'll need to connect an ethernet cable to configure networking between OriginMan and your local PC."
+        },
+        "runQuickStart": {
+          "title": "Running Quick Start Examples",
+          "body": "Now you're ready to make OriginMan move. Follow the Quick Start Guide to complete OriginMan's first operation - let OriginMan dance with your movements!"
+        }
       }
     }
   },

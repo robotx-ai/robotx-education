@@ -65,9 +65,14 @@
     }
   },
   "courseTemplate": {
-    "tocTitle": "目录"
+    "tocTitle": "目录",
+    "pagesTitle": "课程页面",
+    "pagesButtonLabel": "课程页面"
   },
   "openclaw": {
+    "pages": {
+      "home": "主页"
+    },
     "title": "OpenClaw AI 课程模板",
     "intro": "此模板用于你后续粘贴正式教程内容。当前文本可替换为课程总览。",
     "sections": {
@@ -98,32 +103,82 @@
     }
   },
   "originman": {
-    "title": "OriginMan 机器人课程模板",
-    "intro": "此模板用于你后续粘贴正式机器人教程内容。当前文本可替换为最终课程材料。",
+    "pages": {
+      "home": "主页",
+      "quickStart": "快速开始",
+      "userGuide": "用户指南"
+    },
+    "title": "OriginMan 机器人课程",
+    "intro": "OriginMan 是面向未来的智能桌面人形机器人，也是首个完全开源的 ROS2 桌面人形机器人项目，让每一位参与者都能享受机器人开发的乐趣。",
     "sections": {
-      "assembly": {
-        "title": "机器人组装与初始化",
-        "body": "说明硬件组件、组装顺序和安全检查步骤。",
+      "openSource": {
+        "title": "开源共创",
+        "body": "“开放共享，智启未来”是 OriginMan 的进化理念，期待与全球开发者共创机器人未来。",
         "subA": {
-          "title": "机械结构搭建",
-          "body": "记录框架安装、电机连接和接口布局。"
+          "title": "开源生态",
+          "body": "提供控制系统、大小脑通信协议与运动编辑软件等源代码，帮助每位开发者轻松打造自己的“智能大脑”，释放独特创意，开发多样应用。"
         },
         "subB": {
-          "title": "电源与控制器检查",
-          "body": "添加启动检查清单与故障排查步骤。"
+          "title": "持续迭代",
+          "body": "不惧求索，步步皆喜。凭借强大的社区力量，OriginMan 与开发者持续进步，软硬件不断迭代，版本持续更新，让我们共同成长。"
+        },
+        "subC": {
+          "title": "丰富内容",
+          "body": "OriginMan 不只是开源套件，更是你的机器人伙伴。配套硬件、软件、教程、视频资源与论坛支持，丰富的软件与硬件生态帮助你快速成长。"
         }
       },
-      "motion": {
-        "title": "操作与运动控制",
-        "body": "介绍基础运动编程与操作控制逻辑。",
+      "evolution": {
+        "title": "智能进化平台",
+        "body": "OriginMan 不只是硬件开发平台，更是拥有无限可能的智能算法进化平台。",
         "subA": {
-          "title": "标定与测试",
-          "body": "添加运动标定流程与预期测试结果。"
+          "title": "认知核心",
+          "body": "OriginMan 原生搭载 D-Robotics 开发板 RDK X5，10TOPS 算力支持实时视觉推理与自然语言处理。预装大模型交互系统，实现多轮对话理解与 AI 智能交互，带来真正的智能机器人开发体验。"
+        },
+        "subB": {
+          "title": "丰富应用",
+          "body": "OriginMan 使用 ROS2 与 TogetheROS Bot（D-Robotics 深度优化的 ROS 开源机器人操作系统）作为机器人软件系统，兼容 ROS 生态多种应用，开箱即用。内置丰富应用，可快速体验人形模仿学习、视觉循线、AI 语音交互等开发。"
         }
       },
       "secondaryDev": {
         "title": "二次开发",
         "body": "提供传感器扩展、行为扩展与自定义模块思路。"
+      }
+    },
+    "quickStart": {
+      "title": "OriginMan 快速开始",
+      "intro": "让我们开始使用 OriginMan！",
+      "sections": {
+        "boot": {
+          "title": "开机",
+          "body": "(1) 打开电源总开关。你可以看到 OriginMan 背部扩展板电源灯与 RDK X5 电源指示灯亮起，胸口开始发白光。\n\n(2) 等待 10 秒后，胸口灯环由白色变为彩色，随后 OriginMan 语音播报“Hello, I'm OriginMan”。这些现象说明 OriginMan 已成功启动。"
+        },
+        "remoteConnection": {
+          "title": "远程连接",
+          "body": "(1) 打开 MobaXterm，远程登录 OriginMan\n\n(2) 输入用户名和密码：root（用户名），root（密码）\n\n(3) 远程登录成功"
+        },
+        "example1": {
+          "title": "运行示例（与机器人共舞）",
+          "body": "在让机器人模仿你的动作之后，轮到你向机器人学习了。\n成功 SSH 连接后，输入以下命令来操作 OriginMan："
+        },
+        "poweroff": {
+          "title": "关机",
+          "body": "如果需要关闭机器人，可以在终端输入以下命令关闭软件系统：",
+          "body1": "等待约 5 秒后，可关闭机器人控制器的电源开关，关机完成。"
+        }
+      }
+    },
+    "userGuide": {
+      "title": "OriginMan 用户指南",
+      "intro": "以下操作需要具备一定的机器人开发基础，建议提前了解 python、linux、Ubuntu、ssh、ROS/ROS2 等基础知识。",
+      "sections": {
+        "control": {
+          "title": "开机与网络连接",
+          "body": "打开 OriginMan 包装后可见机器人本体。每一台 OriginMan 都有自己的灵魂——“出厂镜像”。\n\n通过切换机器人背部下方的电源开关即可启动 OriginMan。\n\n成功启动后，胸口灯环由白色变为彩色，随后 OriginMan 语音播报“Hello, I'm OriginMan”。这说明镜像已成功启动。\n\n若已接入网络，OriginMan 背部的 OLED 屏会显示 IP 地址，可用于连接。如果未联网，需要连接网线在 OriginMan 与本地电脑间配置网络。"
+        },
+        "runQuickStart": {
+          "title": "运行快速开始示例",
+          "body": "现在你已准备好让 OriginMan 动起来。请跟随快速开始指南完成 OriginMan 的首次操作——让 OriginMan 跟随你的动作共舞！"
+        }
       }
     }
   },

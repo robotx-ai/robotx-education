@@ -14,10 +14,12 @@ type CourseCard = {
 const PAGE_SIZE = 9;
 
 function CourseGridSection({
+  id,
   title,
   subtitle,
   courses,
 }: {
+  id: string;
   title: string;
   subtitle: string;
   courses: CourseCard[];
@@ -31,16 +33,16 @@ function CourseGridSection({
   );
 
   return (
-    <section className="mx-auto mt-14 max-w-7xl px-6">
+    <section id={id} className="mx-auto mt-14 max-w-7xl px-6">
       <h2 className="text-3xl font-bold">{title}</h2>
       <p className="mt-3 max-w-3xl text-gray-700">{subtitle}</p>
 
-      <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className={`mt-8 flex flex-wrap gap-5 ${pageItems.length < 3 ? "justify-center" : ""}`}>
         {pageItems.map((course) => (
           <Link
             key={course.href}
             href={course.href}
-            className="group relative aspect-square overflow-hidden rounded-2xl border border-gray-200"
+            className="group relative aspect-square w-full overflow-hidden rounded-2xl border border-gray-200 sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.875rem)]"
           >
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-200 group-hover:scale-105"
@@ -86,7 +88,7 @@ export default function CoursesPage() {
       title: t("courses.robot.items.originman.title"),
       description: t("courses.robot.items.originman.desc"),
       href: "/courses/robot/humanoid/originman",
-      image: "/assets/home/openclaw-learn.webp",
+      image: "/assets/courses/originman/originman-1.png",
     },
   ];
 
@@ -115,12 +117,13 @@ export default function CoursesPage() {
       </section>
 
       <CourseGridSection
+        id = "robot-course-grid"
         title={t("courses.robot.title")}
         subtitle={t("courses.robot.subtitle")}
         courses={robotCourses}
       />
 
-      <CourseGridSection title={t("courses.ai.title")} subtitle={t("courses.ai.subtitle")} courses={aiCourses} />
+      <CourseGridSection id="ai-course-grid" title={t("courses.ai.title")} subtitle={t("courses.ai.subtitle")} courses={aiCourses} />
     </main>
   );
 }

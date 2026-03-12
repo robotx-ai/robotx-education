@@ -29,12 +29,12 @@ export default function Home() {
       </section>
 
       <section className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 py-16 md:flex-row md:items-center">
-        <div className="grid flex-1 grid-cols-1 gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl bg-sky-50 ">
+        <div className="grid flex-1 grid-cols-1 gap-4 md:gap-0 sm:grid-cols-2">
+          <div className="rounded-2xl">
             <Image src="/assets/home/openclaw-learn.webp" alt="AI course" width={240} height={240} className="h-full w-auto object-cover rounded-2xl" />
           </div>
-          <div className="rounded-2xl bg-indigo-50 ">
-            <Image src="/next.svg" alt="AI learning" width={240} height={240} className="h-full w-auto object-cover rounded-2xl" />
+          <div className="rounded-2xl ">
+            <Image src="/assets/home/learn-openai.jpeg" alt="AI learning" width={240} height={240} className="h-full w-auto object-contain rounded-2xl" />
           </div>
         </div>
         <div className="flex-1 space-y-4">
@@ -48,12 +48,12 @@ export default function Home() {
           <h2 className="text-3xl font-bold">{t("home.robot.title")}</h2>
           <p className="text-base leading-7 text-gray-700">{t("home.robot.description")}</p>
         </div>
-        <div className="grid flex-1 grid-cols-1 gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl bg-amber-50 p-8">
-            <Image src="/window.svg" alt="Robot course" width={240} height={240} className="mx-auto h-40 w-auto" />
+        <div className="grid flex-1 grid-cols-1 gap-4 md:gap-0 sm:grid-cols-2">
+          <div className="rounded-2xl ">
+            <Image src="/assets/courses/originman/originman-1.png" alt="Robot course" width={240} height={240} className="h-full w-auto object-cover rounded-2xl" />
           </div>
-          <div className="rounded-2xl bg-emerald-50 p-8">
-            <Image src="/file.svg" alt="Robot project" width={240} height={240} className="mx-auto h-40 w-auto" />
+          <div className="rounded-2xl ">
+            <Image src="/assets/courses/originman/originman-core.jpg" alt="Robot project" width={640} height={640} className="h-full w-auto object-contain rounded-2xl" />
           </div>
         </div>
       </section>

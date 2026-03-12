@@ -1,6 +1,5 @@
 @import "tailwindcss";
-@import "@fontsource/ubuntu";
-
+/* @import "@fontsource/ubuntu"; */
 
 :root {
   --background: #ffffff;
@@ -24,9 +23,25 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Ubuntu, sans-serif;
+  font-family: MiSans-Regular, Barlow, sans-serif;
 }
 
-header{
+header {
   font-weight: bold;
+}
+
+@layer base {
+  .course-article h1 {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .course-article h2,
+  .course-article h3,
+  .course-article h4 {
+    font-size: 20px;
+  }
+  .course-article p{
+    margin-inline: 4px;
+  }
 }

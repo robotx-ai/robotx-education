@@ -6,10 +6,18 @@ import { useI18n } from "@/i18n/I18nProvider";
 
 export default function OpenClawCoursePage() {
   const { t } = useI18n();
+  const pages = [
+    { label: t("openclaw.pages.home"), href: "/courses/ai/openclaw" },
+  ];
 
   return (
     <main className="bg-gray-50">
-      <CourseArticleTemplate tocTitle={t("courseTemplate.tocTitle")}>
+      <CourseArticleTemplate
+        tocTitle={t("courseTemplate.tocTitle")}
+        pagesTitle={t("courseTemplate.pagesTitle")}
+        pagesButtonLabel={t("courseTemplate.pagesButtonLabel")}
+        pages={pages}
+      >
         <h1>{t("openclaw.title")}</h1>
         <p>{t("openclaw.intro")}</p>
 
