@@ -1,20 +1,118 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { clearSession, isSessionActive } from "@/lib/auth";
 import { useI18n } from "@/i18n/I18nProvider";
 
 export default function Header() {
   const { locale, setLocale, t } = useI18n();
+  const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
+  const [accountMenuOpen, setAccountMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const syncSession = () => {
+      const active = isSessionActive();
+      if (!active) {
+        clearSession();
+      }
+      setIsLoggedIn(active);
+    };
+
+    syncSession();
+    const interval = window.setInterval(syncSession, 30000);
+    window.addEventListener("storage", syncSession);
+
+    return () => {
+      window.clearInterval(interval);
+      window.removeEventListener("storage", syncSession);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      setAccountMenuOpen(false);
+    }
+  }, [isLoggedIn]);
+
+  function handleLogout() {
+    clearSession();
+    setIsLoggedIn(false);
+    setAccountMenuOpen(false);
+    router.push("/");
+  }
+
+  const authButton = isLoggedIn ? (
+    <div className="relative">
+      <button
+        type="button"
+        aria-label={t("common.account")}
+        aria-expanded={accountMenuOpen}
+        onClick={() => setAccountMenuOpen((prev) => !prev)}
+        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-300"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          className="h-4 w-4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path d="M20 21a8 8 0 0 0-16 0" />
+          <circle cx="12" cy="8" r="4" />
+        </svg>
+      </button>
+
+      {accountMenuOpen && (
+        <div className="absolute right-0 top-full z-50 mt-2 w-44 rounded-xl border border-gray-200 bg-white p-2 shadow-lg">
+          <Link
+            href="/profile"
+            className="block rounded-lg px-3 py-2 text-sm hover:bg-gray-100"
+            onClick={() => setAccountMenuOpen(false)}
+          >
+            {t("common.profile")}
+          </Link>
+          <button
+            type="button"
+            className="block w-full rounded-lg px-3 py-2 text-left text-sm hover:bg-gray-100"
+            onClick={handleLogout}
+          >
+            {t("common.logout")}
+          </button>
+        </div>
+      )}
+    </div>
+  ) : (
+    <Link
+      href="/login"
+      aria-label={t("auth.login")}
+      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-gray-300"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        className="h-4 w-4"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <path d="M15 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8" />
+        <path d="M10 12h11m0 0-3.5-3.5M21 12l-3.5 3.5" />
+      </svg>
+    </Link>
+  );
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <Link href="/" className="text-xl w-1/3 xl:w-1/4 font-bold">
-          {t("header.brand")}
+          RobotX Education
         </Link>
 
         <div className="hidden w-full justify-center items-center gap-6 md:flex">
@@ -75,6 +173,8 @@ export default function Header() {
             </ul>
           </nav>
 
+          {authButton}
+
           <select
             aria-label={t("common.language")}
             className="rounded-full border border-gray-300 px-2 py-1 text-sm"
@@ -87,6 +187,7 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-3 md:hidden">
+          {authButton}
           <select
             aria-label={t("common.language")}
             className="rounded-full border border-gray-300 px-2 py-1 text-sm"
