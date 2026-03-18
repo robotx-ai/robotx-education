@@ -1,11 +1,11 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { saveSession } from "@/lib/auth";
 import { useI18n } from "@/i18n/I18nProvider";
 
-export default function LoginPage() {
+function LoginPageContent() {
   const { t } = useI18n();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -126,5 +126,13 @@ export default function LoginPage() {
         </p>
       </form>
     </main>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<main className="min-h-[calc(100vh-80px)]" />}>
+      <LoginPageContent />
+    </Suspense>
   );
 }

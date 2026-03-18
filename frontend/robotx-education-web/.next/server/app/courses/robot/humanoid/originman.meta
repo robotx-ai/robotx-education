@@ -1,0 +1,18 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/courses/layout,_N_T_/courses/robot/layout,_N_T_/courses/robot/humanoid/layout,_N_T_/courses/robot/humanoid/originman/layout,_N_T_/courses/robot/humanoid/originman/page,_N_T_/courses/robot/humanoid/originman"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/courses/robot/humanoid/originman/__PAGE__",
+    "/courses/robot/humanoid/originman",
+    "/courses/robot/humanoid",
+    "/courses/robot",
+    "/courses",
+    "/_index",
+    "/_head"
+  ]
+}

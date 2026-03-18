@@ -1,0 +1,20 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/careers/page": "/careers",
+  "/courses/ai/openclaw/page": "/courses/ai/openclaw",
+  "/courses/page": "/courses",
+  "/courses/robot/humanoid/originman/page": "/courses/robot/humanoid/originman",
+  "/courses/robot/humanoid/originman/quick_start/page": "/courses/robot/humanoid/originman/quick_start",
+  "/courses/robot/humanoid/originman/user_guide/page": "/courses/robot/humanoid/originman/user_guide",
+  "/donation/page": "/donation",
+  "/events/page": "/events",
+  "/favicon.ico/route": "/favicon.ico",
+  "/login/page": "/login",
+  "/page": "/",
+  "/partners/page": "/partners",
+  "/profile/page": "/profile",
+  "/reset-password/page": "/reset-password",
+  "/signup/page": "/signup"
+}

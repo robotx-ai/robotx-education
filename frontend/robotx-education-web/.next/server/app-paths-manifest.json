@@ -1,0 +1,20 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
+  "/careers/page": "app/careers/page.js",
+  "/courses/ai/openclaw/page": "app/courses/ai/openclaw/page.js",
+  "/courses/page": "app/courses/page.js",
+  "/courses/robot/humanoid/originman/page": "app/courses/robot/humanoid/originman/page.js",
+  "/courses/robot/humanoid/originman/quick_start/page": "app/courses/robot/humanoid/originman/quick_start/page.js",
+  "/courses/robot/humanoid/originman/user_guide/page": "app/courses/robot/humanoid/originman/user_guide/page.js",
+  "/donation/page": "app/donation/page.js",
+  "/events/page": "app/events/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js",
+  "/partners/page": "app/partners/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/reset-password/page": "app/reset-password/page.js",
+  "/signup/page": "app/signup/page.js"
+}

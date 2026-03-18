@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { clearSession, getAccessToken } from "@/lib/auth";
 import { useI18n } from "@/i18n/I18nProvider";
@@ -13,7 +13,7 @@ type Profile = {
   eduVerified: boolean;
 };
 
-export default function ProfilePage() {
+function ProfilePageContent() {
   const { t } = useI18n();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -157,10 +157,14 @@ export default function ProfilePage() {
   }
 
   async function sendResetEmail() {
+    if (!profile) {
+      return;
+    }
+    const email = profile.email;
     const response = await fetch("/.netlify/functions/forgot-password", {
       method: "POST",
       body: JSON.stringify({
-        email: profile.email,
+        email,
         redirectTo: `${window.location.origin}/reset-password`,
       }),
     });
@@ -297,5 +301,13 @@ export default function ProfilePage() {
         </div>
       )}
     </main>
+  );
+}
+
+export default function ProfilePage() {
+  return (
+    <Suspense fallback={<main className="mx-auto max-w-4xl px-6 py-10" />}>
+      <ProfilePageContent />
+    </Suspense>
   );
 }
