@@ -1,0 +1,40 @@
+# OriginMan Quick Start
+
+Let's start using OriginMan.
+
+![OriginMan robot overview](/assets/courses/originman/originman-1.png)
+
+## Power On
+
+1. Turn on the main power switch. You should see the power light on OriginMan's rear expansion board and the RDK X5 indicator turn on, while the chest ring begins glowing white.
+2. Wait about 10 seconds. The chest ring changes from white to a colorful animation, then OriginMan announces, "Hello, I'm OriginMan." That means the robot has started successfully.
+
+## Remote Connection
+
+1. Open MobaXterm and start a remote session to OriginMan.
+2. Enter the username `root` and password `root`.
+3. After the shell opens, the remote login is complete.
+
+## Run the First Example
+
+After the robot imitates your actions, it is time to learn directly from the robot.
+
+Run the following command after your SSH connection is ready:
+
+```bash
+python3 /userdata/dev_ws/src/originman/originman_pydemo/action_dance.py
+```
+
+> Watch the robot posture and motion timing while the script runs. This is the fastest way to confirm that the control pipeline is healthy.
+
+<video src="/assets/home/agibot-x2-20s.mp4" muted playsInline loop />
+
+## Power Off
+
+If you need to shut down the robot, close the software system first from the terminal:
+
+```bash
+sudo poweroff
+```
+
+After waiting around 5 seconds, turn off the physical power switch on the controller to finish the shutdown.

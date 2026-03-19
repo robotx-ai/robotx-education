@@ -1,0 +1,162 @@
+# 打通 OpenClaw 与 Telegram 超详细实操教程
+
+前面如果已经完成了 OpenClaw 本体部署，接下来就可以把它接入 Telegram，让它直接在 Telegram 里和你对话、帮你做事。
+
+本教程会一步一步带你完成：
+
+- 创建 Telegram Bot
+- 获取 Token 和配对码
+- 在 OpenClaw 中配置 Telegram
+- 完成配对绑定
+- 测试是否接入成功
+
+## 一、先准备什么？
+
+开始之前，需要先确保两件事：
+
+1. **OpenClaw 已经安装完成**
+2. **已经有 Telegram 账号**
+
+如果 OpenClaw 还没装好，建议先完成本地部署，再继续下面的步骤。
+
+## 二、创建 Telegram Bot 并获取 Token
+
+#### 第 1 步：打开 Telegram，搜索 BotFather
+
+在 Telegram 搜索栏中输入 `@BotFather`，然后进入聊天界面。
+
+> BotFather 是 Telegram 官方提供的机器人管理工具，创建 Bot、修改名称、获取 Token，基本都要通过它完成。
+
+<img width="724" height="450" alt="Screenshot 2026-03-12 at 17 19 48" src="https://github.com/user-attachments/assets/6221ad8f-317e-4c2d-90ef-3b90480e8218" />
+
+#### 第 2 步：输入 `/newbot`
+
+在聊天框中输入：
+
+```
+/newbot
+```
+
+然后按照提示一步一步操作：
+
+- 给机器人设置一个**显示名称**
+- 给机器人设置一个**用户名**
+
+> 注意：用户名通常需要以 `bot` 结尾，且不能和别人重复。
+
+创建完成后，BotFather 会发给你一串 **API Token**，格式通常像这样：
+
+```
+1234567890:AAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+这就是后面配置 OpenClaw 时要用到的 Bot Token，**先复制保存好**。
+
+<img width="700" height="550" alt="Screenshot 2026-03-12 at 17 21 38" src="https://github.com/user-attachments/assets/e2118f00-1e13-4efd-acfd-2d0662c2a763" />
+
+## 三、在 OpenClaw 中配置 Telegram
+
+#### 第 1 步：打开终端，进入配置
+
+在终端输入：
+
+```bash
+openclaw config
+```
+
+<img width="679" height="386" alt="Screenshot 2026-03-12 at 17 30 06" src="https://github.com/user-attachments/assets/17608fb1-bfc5-43df-b135-dc756de893ed" />
+
+#### 第 2 步：选择 `local`
+
+如果界面里出现环境选项，选择 `local`，意思是配置本地这台机器上的 OpenClaw。
+
+#### 第 3 步：进入 `channels` 配置
+
+在配置菜单中，找到并进入 `channels`，这里就是配置聊天渠道的地方，比如 Telegram、Discord、飞书等。
+
+<img width="670" height="490" alt="Screenshot 2026-03-12 at 17 33 28" src="https://github.com/user-attachments/assets/c0f3e445-dd48-438b-8909-9c61d1b903ba" />
+
+#### 第 4 步：选择配置连接
+
+选择：
+
+```
+Configure/link
+```
+
+<img width="522" height="65" alt="Screenshot 2026-03-12 at 17 33 52" src="https://github.com/user-attachments/assets/8cd95189-3461-4823-9144-b7ba646a9284" />
+
+#### 第 5 步：选择 Telegram
+
+在平台列表中，选择 `Telegram`。
+
+<img width="493" height="334" alt="Screenshot 2026-03-12 at 17 34 08" src="https://github.com/user-attachments/assets/b0b9b0f0-40f9-4bf3-8506-ed79cac46c67" />
+
+#### 第 6 步：粘贴 Bot Token
+
+系统会要求输入 Telegram Bot Token，把刚才从 BotFather 那里拿到的 Token 粘贴进去，确认无误后继续。
+
+<img width="671" height="262" alt="Screenshot 2026-03-12 at 17 36 17" src="https://github.com/user-attachments/assets/433f4bae-4956-4191-9891-9654303e3681" />
+
+之后选择Finished
+
+<img width="268" height="320" alt="Screenshot 2026-03-12 at 17 36 50" src="https://github.com/user-attachments/assets/d42dc54f-456b-4d8e-9651-19ba39a87658" />
+
+Configure DM access policies now? (default: pairing)
+选择no
+
+<img width="776" height="297" alt="Screenshot 2026-03-12 at 17 38 47" src="https://github.com/user-attachments/assets/d11935de-5b00-4311-8cf1-76bd38ebb576" />
+
+## 四、获取 Pairing Code（配对码）
+
+#### 第 1 步：搜索你刚创建的 Bot
+
+回到 Telegram 搜索栏，输入刚才创建好的 Bot 用户名，找到它并进入聊天界面。
+
+#### 第 2 步：点击 Start
+
+点击 **Start**，或者直接发一条任意消息给这个 Bot。正常情况下，Bot 会返回一个**配对码（Pairing Code）**。
+
+把这个配对码也复制保存好，后面绑定 OpenClaw 时会用到。
+
+<img width="900" height="550" alt="Screenshot 2026-03-12 at 17 41 06" src="https://github.com/user-attachments/assets/20f8dcbe-704e-458c-b793-d2d1faed2b1f" />
+
+## 五、完成配对绑定
+
+#### 在终端执行配对命令
+
+把刚才保存的配对码填入下面的命令并执行：
+
+```bash
+openclaw pairing approve telegram 你的配对码
+```
+
+例如：
+
+```bash
+openclaw pairing approve telegram ABCD-1234
+```
+
+执行后看到成功提示，说明 Telegram 已经和 OpenClaw **绑定完成**。
+
+<img width="706" height="231" alt="Screenshot 2026-03-12 at 17 42 01" src="https://github.com/user-attachments/assets/01596818-b789-4465-a4c1-eb93ce3f4b0f" />
+
+## 六、测试是否接入成功
+
+#### 回到 Telegram 给 Bot 发消息
+
+打开你的 Bot 聊天窗口，发送一条测试消息，比如：
+
+```
+Hi
+```
+
+或者：
+
+```
+你好
+```
+
+如果 Bot 正常回复，就说明 **Telegram 接入已经成功生效** 
+
+<img width="750" height="550" alt="Screenshot 2026-03-12 at 17 43 21" src="https://github.com/user-attachments/assets/1168f336-239b-4c9a-8748-243115c82a56" />

@@ -1,0 +1,254 @@
+# OpenClaw Deployment Guide
+
+> **In one sentence: OpenClaw is an AI assistant that lives right on your computer.**
+
+You know ChatGPT, right? OpenClaw is like a turbo-charged version of ChatGPT — except it doesn't just chat with you. It actually **gets things done**:
+
+- Send emails and manage your calendar
+- Control your browser, auto-fill forms, and scrape data
+- Manage files and run commands
+- Even chat with you directly via **WeChat, Feishu, or Telegram**
+
+
+## Step-by-Step Installation Guide
+
+### Method 1: The Easiest One-Click Install (Recommended for Beginners)
+
+#### Step 1: Open your terminal
+
+- **Mac users**: Press `Command + Space`, type `Terminal`, and hit Enter
+- **Windows users**: Press the `Win` key, search for `PowerShell`, and right-click → "Run as administrator"
+
+> **What's a terminal?** Simply put, it's a black window where you type commands — think of it as "text chatting" with your computer.
+
+<img width="570" height="370" alt="Screenshot 2026-03-12 at 15 33 37" src="https://github.com/user-attachments/assets/dbb38fcc-d95f-42a1-963d-3af3efb3d741" />
+
+
+#### Step 2: Copy and paste the install command
+
+**Mac / Linux users** — copy this command, paste it into your terminal, and press Enter:
+
+```bash
+curl -fsSL https://openclaw.ai/install.sh | bash
+```
+
+**Windows users** — copy this command, paste it into PowerShell, and press Enter:
+
+```powershell
+iwr -useb https://openclaw.ai/install.ps1 | iex
+```
+
+That's it — just one line. Wait for it to finish and you're installed 
+
+The install script will automatically:
+
+1. Check whether **Node.js** is installed (and install it for you if not)
+2. Download the **OpenClaw core**
+3. Launch the **configuration wizard** to guide you through initial setup
+
+<img width="570" height="370" alt="Screenshot 2026-03-12 at 15 41 23" src="https://github.com/user-attachments/assets/c52974bb-5a1b-4c10-a0c2-6bcafb89cfbf" />
+
+
+#### Step 3: Confirm the security prompt
+
+Once the installation succeeds, OpenClaw's logo will appear in the terminal. OpenClaw will then display a **Security Warning** with the following options at the bottom of your screen:
+
+```
+I understand this is personal-by-default and shared/multi-user use requires lock-down. Continue?
+
+Yes / No
+```
+
+At this point:
+
+1. Use the **arrow keys (↑ ↓)** to navigate
+2. Select **Yes**
+3. Press **Enter** to confirm and continue
+
+This will proceed with OpenClaw's initial configuration.
+
+<img width="704" height="47" alt="Screenshot 2026-03-12 at 16 04 24" src="https://github.com/user-attachments/assets/36d411a3-c036-4636-a342-1328aebd5e21" />
+
+
+#### Step 5: Choose your onboarding mode
+
+You'll see two options:
+
+- `QuickStart`
+- `Manual`
+
+**We recommend `QuickStart`** — it's designed for beginners and lets you complete installation quickly with default settings. If you want to customize things later, just run:
+
+```bash
+openclaw configure
+```
+
+**How to proceed:** Once you see the green dot next to `QuickStart`, press **Enter** to continue.
+
+<img width="499" height="50" alt="Screenshot 2026-03-12 at 16 06 39" src="https://github.com/user-attachments/assets/27a43177-92d7-4eea-9442-8eb90b1f45ff" />
+
+
+#### Step 6: Choose your AI model provider
+
+OpenClaw is an AI Agent framework — it **does not come with a built-in model**. This step is where you connect it to an AI model provider.
+
+Choose based on your needs, preferences, and existing accounts. If you're already using OpenAI, simply select `OpenAI`.
+
+Once selected, press **Enter** to proceed.
+
+
+#### Step 7: Choose your authentication method
+
+Since OpenClaw is just a framework, the actual intelligence comes from the model service you connect. This step completes the authentication with your chosen provider.
+
+If you selected OpenAI, there are two common options:
+
+**Option 1: Use an OpenAI API Key**
+
+Best for users who already have API access through OpenAI Platform. Head to the [[OpenAI API Keys page](https://platform.openai.com/api-keys)](https://platform.openai.com/api-keys) to create your key, then paste it into OpenClaw.
+
+> API keys can be created and managed in the API keys section of your organization settings.
+
+**Option 2: Log in with your ChatGPT account**
+
+If the interface supports browser-based login, you can authenticate directly using your ChatGPT account. Codex CLI, the App, and IDE extensions all support ChatGPT account or API key login — by default, a browser window will open to complete the login flow.
+
+Once authenticated, continue to select your **AI model**.
+
+<img width="774" height="553" alt="Screenshot 2026-03-12 at 16 24 10" src="https://github.com/user-attachments/assets/fb41ef8d-514f-4691-8d44-db20c51c9e21" />
+
+
+#### Step 8: Choose a channel
+
+This step is where you choose which messaging platform OpenClaw will use to interact with you — for example Telegram, Slack, Discord, or WhatsApp.
+
+If you don't want to set up an external channel right now, select `Skip for now`. You can always add channels later — the interface even reminds you:
+
+```
+You can add channels later via openclaw channels add
+```
+
+In other words: get OpenClaw up and running first, then connect Telegram, Slack, or whatever you like at your own pace.
+
+**How to proceed:** Once you see the green dot next to `Skip for now`, press **Enter** to continue.
+
+<img width="579" height="335" alt="Screenshot 2026-03-12 at 16 26 49" src="https://github.com/user-attachments/assets/796784a6-17e3-4418-9959-abd3661162ba" />
+
+
+#### Step 9: Choose a search provider
+
+This step configures **web search** for OpenClaw. If you want it to look things up on the internet for you, select a search provider here — options include Brave, Gemini, Grok, Kimi, and Perplexity.
+
+If you don't need web search right now, select `Skip for now`. You can configure it separately later:
+
+```bash
+openclaw configure --section web
+```
+
+**How to proceed:** Once you see the green dot next to `Skip for now`, press **Enter** to continue.
+
+<img width="519" height="116" alt="Screenshot 2026-03-12 at 16 31 21" src="https://github.com/user-attachments/assets/04776e90-b864-4050-abba-27ff4f6f13ff" />
+
+
+#### Step 10: Select Skill dependencies
+
+This step is about installing optional **Skill packages** — think of Skills as capability add-ons for OpenClaw, each enabling a different type of functionality. The interface usually includes a brief description for each one.
+
+Choose the Skills that fit your needs, or select `Skip for now` to skip this step entirely.
+
+If you want to install Skills:
+
+1. Use the **arrow keys** to navigate
+2. Press **Space** to select the Skills you want
+3. Press **Enter** to confirm
+
+If you just want to get OpenClaw running first, `Skip for now` is totally fine.
+
+<img width="545" height="355" alt="Screenshot 2026-03-12 at 16 37 51" src="https://github.com/user-attachments/assets/a0d38107-90ae-4fbc-904d-be56adc63243" />
+
+
+#### Step 11: Configure Skill API Keys (optional)
+
+If you selected Skills in the previous step, the installer may ask whether you want to configure the corresponding API Keys now — for example:
+
+- `GOOGLE_PLACES_API_KEY`
+- `GEMINI_API_KEY`
+- `NOTION_API_KEY`
+- `OPENAI_API_KEY`
+- `ELEVENLABS_API_KEY`
+
+These keys are required for certain Skills to work. If you just want to finish the installation for now, you can safely select **`No` for all of them** and add the keys later when you actually need a particular Skill.
+
+**How to proceed:** Select `No` for each prompt, then press **Enter**. This won't affect the installation.
+
+<img width="326" height="255" alt="Screenshot 2026-03-12 at 16 42 39" src="https://github.com/user-attachments/assets/e870d63d-1e3a-45e6-89f7-93ff04caa7cf" />
+
+
+#### Step 12: Select Hooks
+
+This step lets you enable some automation features. We recommend selecting **all 3**:
+
+<table class="lesson-content-table">
+  <thead>
+    <tr>
+      <th>Hook</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`boot-md`</td>
+      <td>Runs `BOOT.md` on startup</td>
+    </tr>
+    <tr>
+      <td>`command-logger`</td>
+      <td>Logs command history</td>
+    </tr>
+    <tr>
+      <td>`session-memory`</td>
+      <td>Saves session memory</td>
+    </tr>
+  </tbody>
+</table>
+
+**How to proceed:**
+
+1. Use the **arrow keys** to navigate
+2. Press **Space** to select each of the 3 items
+3. Press **Enter** to confirm
+
+<img width="696" height="104" alt="Screenshot 2026-03-12 at 16 45 34" src="https://github.com/user-attachments/assets/372437ec-09e9-4407-bdff-dd539465c98a" />
+
+
+#### Step 13: Choose how to launch
+
+At this point, installation is essentially complete. This final step asks how you'd like to open OpenClaw. We recommend selecting `Open the Web UI` — it launches a browser-based interface that's intuitive and beginner-friendly, making it easy to manage OpenClaw going forward.
+
+**How to proceed:**
+
+1. Use the **arrow keys** to navigate to `Open the Web UI`
+2. Confirm the **solid dot** appears next to it
+3. Press **Enter** to continue
+
+<img width="479" height="568" alt="Screenshot 2026-03-12 at 16 49 23" src="https://github.com/user-attachments/assets/27c7b0cf-c127-4c97-9549-ed10978a238a" />
+
+
+## Deployment complete — you're in!
+
+OpenClaw is now **successfully deployed**.
+
+After pressing Enter, your browser will open automatically. Once inside, try sending a message in the chat box to confirm everything is working.
+
+### On your first visit, take a moment to personalize:
+
+- Give your OpenClaw a **name**
+- Pick a favorite **emoji**
+- Choose its **personality or tone**
+
+Once that's done, you're ready to go. Welcome to your very own AI assistant 
+
+<img width="750" height="400" alt="Screenshot 2026-03-12 at 16 58 43" src="https://github.com/user-attachments/assets/ee8c2194-431a-4939-aa1e-3f48b6887974" />
+
+
+
+<img width="800" height="400" alt="Screenshot 2026-03-12 at 16 59 24" src="https://github.com/user-attachments/assets/b3a326f5-1722-4bf5-b291-934cbf5deb84" />

@@ -1,0 +1,40 @@
+# OriginMan 快速开始
+
+让我们开始使用 OriginMan。
+
+![OriginMan 机器人概览](/assets/courses/originman/originman-1.png)
+
+## 开机
+
+1. 打开电源总开关。你会看到 OriginMan 背部扩展板的电源灯与 RDK X5 指示灯亮起，同时胸口灯环开始发出白光。
+2. 等待约 10 秒后，胸口灯环会从白色切换为彩色动态效果，随后 OriginMan 播报 “Hello, I'm OriginMan”。这表示机器人已经成功启动。
+
+## 远程连接
+
+1. 打开 MobaXterm，建立到 OriginMan 的远程连接。
+2. 输入用户名 `root` 和密码 `root`。
+3. 当终端成功打开后，说明远程登录已经完成。
+
+## 运行第一个示例
+
+在让机器人模仿你的动作之后，现在轮到你从机器人身上学习。
+
+SSH 连接成功后，输入以下命令来操作 OriginMan：
+
+```bash
+python3 /userdata/dev_ws/src/originman/originman_pydemo/action_dance.py
+```
+
+> 观察机器人执行时的姿态和动作节奏。这是确认控制链路是否正常的最快方式。
+
+<video src="/assets/home/agibot-x2-20s.mp4" muted playsInline loop />
+
+## 关机
+
+如果你需要关闭机器人，请先在终端中关闭软件系统：
+
+```bash
+sudo poweroff
+```
+
+等待约 5 秒后，再关闭控制器上的实体电源开关，即可完成关机。

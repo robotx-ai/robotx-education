@@ -1,0 +1,165 @@
+# OriginMan
+
+OriginMan is a future-facing intelligent desktop humanoid robot and the first fully open-source ROS2 desktop humanoid project. It is built so every participant can enjoy the process of robot development instead of treating robotics as a closed system.
+
+![OriginMan full body platform](/assets/courses/originman/originman-1.png)
+
+## Open Source, Built Together
+
+“Open sharing, intelligent creation, future together” defines the OriginMan philosophy. The project is designed to evolve with developers around the world rather than behind a closed product wall.
+
+### Open Ecosystem
+
+OriginMan provides source code for the main control system, communication protocols between the upper and lower control layers, and motion editing software. That gives each developer the foundation to build a custom “intelligent brain,” test original ideas, and create diverse robot applications.
+
+### Continuous Iteration
+
+Even small progress matters when the goal is long-term robotics innovation. With community participation, both the hardware and software continue to iterate, and each version cycle expands what developers can build.
+
+### AI Development Out of the Box
+
+OriginMan ships with built-in AI capability and practical examples for models such as DeepSeek and Qwen. That lowers the barrier to experimentation and gives developers more room to explore real interactive robot behavior.
+
+### Complete Learning Support
+
+OriginMan is more than an open-source kit. It is a complete development companion with hardware, software, illustrated guides, video resources, and community discussion support so builders can move faster with less friction.
+
+## An Intelligent Evolution Platform
+
+OriginMan is not only a hardware platform. It is an evolving intelligent algorithm platform designed for extension and experimentation.
+
+### Cognitive Core
+
+OriginMan uses the D-Robotics RDK X5 robot development board as its native compute platform. With 10 TOPS of onboard performance, it supports real-time vision inference and natural language processing. The preinstalled large-model interaction system makes multi-turn dialogue, AI interaction, and “intelligent robot” development directly accessible.
+
+### Rich Application Layer
+
+OriginMan runs on ROS2 and TogetheROS.Bot, D-Robotics’ deeply optimized open-source robotics operating system. It stays compatible with many ROS ecosystem applications and supports immediate experimentation in areas like human imitation learning, vision-based line following, and AI voice interaction.
+
+## Built From First Principles
+
+Every mechanical joint carries an idea about embodied intelligence. Every code commit adds another line to the future of human-robot collaboration.
+
+### Walk Together
+
+This is not a project for isolated heroes. It is a platform for people building together. Whether you are just entering robotics or you already have development experience, the community is intended to give you peers, references, and momentum.
+
+## Core Specifications
+
+<table class="lesson-content-table">
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>Configuration Area</th>
+      <th style={{ textAlign: "left" }}>Parameter Summary</th>
+      <th style={{ textAlign: "left" }}>Detailed Specification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>Main Control System</strong></td>
+      <td style={{ textAlign: "left" }}>RDK X5 main control platform</td>
+      <td style={{ textAlign: "left" }}>
+        CPU: octa-core ARM Cortex-A55 @ 1.5GHz, 64-bit instruction set<br />
+        GPU: 32 GFLOPS graphics processor<br />
+        BPU: 1 x Bayes-e @ 10 TOPS neural processor<br />
+        Memory: 8GB LPDDR4<br />
+        Storage: 32GB flash
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>Expansion Control</strong></td>
+      <td style={{ textAlign: "left" }}>MM32F103CBT6 controller</td>
+      <td style={{ textAlign: "left" }}>
+        Main frequency: 96MHz<br />
+        Flash: 64KB<br />
+        RAM: 20KB<br />
+        IMU: MPU6050 six-axis sensor for posture detection
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>Actuation System</strong></td>
+      <td style={{ textAlign: "left" }}>High-performance servo setup</td>
+      <td style={{ textAlign: "left" }}>
+        <strong>Torso servo HTD-30H</strong><br />
+        Torque: 30KG.cm @ 12.6V<br />
+        Accuracy: 0.3°<br />
+        Range: 0°-240°<br />
+        Communication: bus control<br /><br />
+        <strong>Head servo LFD-01M</strong><br />
+        Torque: 1.8KG.cm @ 6V<br />
+        Range: 0°-180°<br />
+        Features: anti-stall design with metal gears
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>Degrees of Freedom</strong></td>
+      <td style={{ textAlign: "left" }}>20-DOF configuration</td>
+      <td style={{ textAlign: "left" }}>
+        Head module: 2 DOF x 1 (yaw, pitch)<br />
+        Arm modules: 2 DOF x 2 (shoulders) + 1 DOF x 2 (elbows) + 1 DOF x 2 (hands)<br />
+        Leg modules: 2 DOF x 2 (hips) + 1 DOF x 2 (knees) + 2 DOF x 2 (ankles)<br />
+        Full-body coordinated control for complex motion programming
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>Perception System</strong></td>
+      <td style={{ textAlign: "left" }}>Integrated multimodal sensing</td>
+      <td style={{ textAlign: "left" }}>
+        Vision: 5MP camera with 120° ultra-wide field of view<br />
+        Display: 128 x 64 SSD1306 OLED screen<br />
+        Lighting: 6 x WS2812B RGB light ring<br />
+        Audio: 3W / 4Ω speaker<br />
+        Voice input: MEMS digital microphone array
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>Power System</strong></td>
+      <td style={{ textAlign: "left" }}>Smart lithium battery supply</td>
+      <td style={{ textAlign: "left" }}>
+        Battery: 11.1V 2500mAh lithium battery<br />
+        Discharge rate: 10C continuous<br />
+        Battery life: at least 3 hours standard runtime<br />
+        Charging: fast charge within 2 hours, supports charge-and-use
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>Communication Interfaces</strong></td>
+      <td style={{ textAlign: "left" }}>Rich expansion support</td>
+      <td style={{ textAlign: "left" }}>
+        USB: 1 x Type-C (data) + 4 x USB 3.0<br />
+        Wireless: dual-band WiFi 6 + Bluetooth 5.4<br />
+        Debugging: Micro USB serial<br />
+        Expansion: reserved I2C, GPIO, and related interfaces
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>Mechanical Specs</strong></td>
+      <td style={{ textAlign: "left" }}>System engineering dimensions</td>
+      <td style={{ textAlign: "left" }}>
+        Size: 373mm (H) x 186mm (W) x 106mm (D)<br />
+        Weight: 2.05kg with battery<br />
+        Payload: up to 500g<br />
+        Max walking speed: 16cm/s
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>Operating System</strong></td>
+      <td style={{ textAlign: "left" }}>Software development environment</td>
+      <td style={{ textAlign: "left" }}>
+        OS: Ubuntu 22.04 LTS<br />
+        Robotics framework: ROS2 Humble<br />
+        Development platform: TogetheROS.Bot
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>Development Support</strong></td>
+      <td style={{ textAlign: "left" }}>Full-stack development capability</td>
+      <td style={{ textAlign: "left" }}>
+        Languages: Python / C / C++ / JavaScript<br />
+        Mobile control: iOS / Android app operation<br />
+        Tools: visual action editor and simulation environment<br />
+        Secondary development: complete API documentation
+      </td>
+    </tr>
+  </tbody>
+</table>

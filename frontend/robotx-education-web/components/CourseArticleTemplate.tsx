@@ -86,12 +86,12 @@ export default function CourseArticleTemplate({
         </ul>
       </nav>
     ),
-    [tocItems, tocTitle]
+    [tocItems, tocTitle],
   );
 
   return (
-    <div className="mx-auto flex w-full max-w-7xl gap-6 px-6 py-10">
-      <aside className="sticky top-24 hidden h-fit w-56 rounded-xl border border-gray-200 bg-white p-4 lg:block">
+    <div className="course-template-shell">
+      <aside className="course-template-sidebar course-template-sidebar-left">
         <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">{pagesTitle}</h2>
         <ul className="space-y-2 text-sm">
           {pages.map((page) => {
@@ -112,32 +112,26 @@ export default function CourseArticleTemplate({
         </ul>
       </aside>
 
-      <article
-        ref={contentRef}
-        className="course-article min-w-0 flex-1 space-y-6 rounded-xl border border-gray-200 bg-white p-6"
-      >
+      <article ref={contentRef} className="course-article">
         {children}
       </article>
 
-      <aside className="sticky top-24 hidden h-fit w-64 rounded-xl border border-gray-200 bg-white p-4 lg:block">
+      <aside className="course-template-sidebar course-template-sidebar-right">
         {tocContent}
       </aside>
 
       <button
         type="button"
         aria-label={pagesButtonLabel}
-        className="fixed bottom-6 left-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-black text-xl font-semibold text-white shadow lg:hidden"
+        className="course-template-mobile-trigger"
         onClick={() => setMobilePagesOpen((prev) => !prev)}
       >
-        ≡
+        <span aria-hidden="true">≡</span>
       </button>
 
       {mobilePagesOpen && (
         <div className="fixed inset-0 z-40 bg-black/40 lg:hidden" onClick={() => setMobilePagesOpen(false)}>
-          <div
-            className="absolute bottom-0 left-0 right-0 max-h-[65vh] overflow-y-auto rounded-t-2xl bg-white p-5"
-            onClick={(event) => event.stopPropagation()}
-          >
+          <div className="course-template-mobile-sheet" onClick={(event) => event.stopPropagation()}>
             <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">{pagesTitle}</h2>
             <ul className="space-y-2 text-sm">
               {pages.map((page) => {

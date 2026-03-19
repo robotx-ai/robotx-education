@@ -1,0 +1,165 @@
+# OriginMan
+
+OriginMan 是一款面向未来的智能桌面人形机器人，同时也是首个全开源的 ROS2 桌面人形机器人开源项目，旨在让每一位参与者都能享受机器人开发的乐趣。
+
+![OriginMan 全身平台](/assets/courses/originman/originman-1.png)
+
+## 开源共建
+
+“开放共享，智创未来”是 OriginMan 的进化哲学。它不是封闭产品，而是期待与全球开发者一起共建机器人未来的开放平台。
+
+### 开源生态
+
+OriginMan 提供主控系统源码、大脑小脑通信协议以及动作编辑软件源码，帮助每位开发者轻松打造专属的“智能大脑”，释放独特创意，开发多样化应用。
+
+### 持续迭代
+
+无论真理多么深远，每一次小小的进步都值得欣喜。依托强大的社区支持，OriginMan 与开发者共同前行，软硬件持续迭代，版本周期更新，一起成长壮大。
+
+### 畅享 AI 开发
+
+OriginMan 出厂即支持诸多 AI 功能，并提供 DeepSeek、Qwen 等模型 API 及使用案例，让你的机器人开发之旅拥有更多可能性。
+
+### 内容齐全
+
+OriginMan 不仅是一个开源套件，更像你的机器人伙伴。硬件、软件、图文教程、视频资源、论坛支持一应俱全，丰富的软硬件支持帮助你更快成长。
+
+## 智能进化平台
+
+OriginMan 不仅是一个硬件开发平台，更是一个不断进化的智能算法平台，你可以在它之上持续拓展更多能力。
+
+### 认知核心
+
+OriginMan 原生搭载地瓜机器人开发板 RDK X5。10 TOPS 算力支持实时视觉推理与自然语言处理。预装的大模型交互系统可实现多轮对话理解、AI 智能互动等能力，让“智能机器人”开发真正落地。
+
+### 应用丰富
+
+OriginMan 采用 ROS2 及 TogetheROS.Bot（地瓜机器人深入优化的 ROS 开源机器人操作系统）作为机器人软件系统，兼容 ROS 生态中的众多应用，即装即用。原装应用覆盖人体模仿学习、视觉巡线、AI 语音交互等方向，方便快速上手开发。
+
+## 始于初心
+
+每个机械关节都承载着对智能体的想象，每次代码提交都在描绘人机共生的未来。
+
+### 携手同行
+
+这里没有孤胆英雄，只有携手同行的探索者。无论你是第一次接触机器人，还是已经拥有丰富开发经验，都能在社区中找到志同道合的伙伴。
+
+## 核心规格参数
+
+<table class="lesson-content-table">
+  <thead>
+    <tr>
+      <th style={{ textAlign: "left" }}>主要配置项</th>
+      <th style={{ textAlign: "left" }}>参数说明</th>
+      <th style={{ textAlign: "left" }}>详细规格说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>主控系统</strong></td>
+      <td style={{ textAlign: "left" }}>RDK X5 主控平台</td>
+      <td style={{ textAlign: "left" }}>
+        CPU：八核 ARM Cortex-A55 @ 1.5GHz，支持 64 位指令集<br />
+        GPU：32GFLOPS 图形处理单元<br />
+        BPU：1 x Bayes-e @ 10TOPS 神经网络处理器<br />
+        内存：8GB LPDDR4 高速运行内存<br />
+        存储：32GB 高速闪存
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>扩展控制</strong></td>
+      <td style={{ textAlign: "left" }}>MM32F103CBT6 控制器</td>
+      <td style={{ textAlign: "left" }}>
+        主频：96MHz 高速处理器<br />
+        Flash：64KB 程序存储空间<br />
+        RAM：20KB 数据运行空间<br />
+        IMU：MPU6050 六轴传感器，支持姿态检测
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>执行系统</strong></td>
+      <td style={{ textAlign: "left" }}>高性能舵机配置</td>
+      <td style={{ textAlign: "left" }}>
+        <strong>躯干舵机 HTD-30H</strong><br />
+        扭矩：30KG.cm @ 12.6V 大功率输出<br />
+        精度：0.3° 高精度控制<br />
+        角度：0°-240° 大范围转动<br />
+        通信：总线控制方式<br /><br />
+        <strong>头部舵机 LFD-01M</strong><br />
+        扭矩：1.8KG.cm @ 6V 精确控制<br />
+        角度：0°-180° 灵活转动<br />
+        特点：防堵转设计，金属齿轮传动
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>自由度分布</strong></td>
+      <td style={{ textAlign: "left" }}>20 自由度配置</td>
+      <td style={{ textAlign: "left" }}>
+        头部模块：2DOF x 1（水平、俯仰）<br />
+        手臂模块：2DOF x 2（肩部）+ 1DOF x 2（肘部）+ 1DOF x 2（手部）<br />
+        腿部模块：2DOF x 2（髋部）+ 1DOF x 2（膝部）+ 2DOF x 2（踝部）<br />
+        全身协调控制，支持复杂动作编程
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>感知系统</strong></td>
+      <td style={{ textAlign: "left" }}>多模态传感器集成</td>
+      <td style={{ textAlign: "left" }}>
+        视觉系统：500 万像素摄像头，120° 超广角视场<br />
+        显示模块：128 x 64 SSD1306 OLED 显示屏<br />
+        灯光系统：6 x WS2812B RGB 全彩灯环<br />
+        音频系统：3W / 4Ω 高保真扬声器<br />
+        拾音系统：MEMS 数字输出麦克风阵列
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>电源系统</strong></td>
+      <td style={{ textAlign: "left" }}>智能锂电池供电</td>
+      <td style={{ textAlign: "left" }}>
+        电池规格：11.1V 2500mAh 高能量密度锂电池<br />
+        放电性能：10C 持续放电倍率<br />
+        续航能力：≥3 小时标准工作时间<br />
+        充电系统：≤2 小时快速充电，支持边充边用
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>通信接口</strong></td>
+      <td style={{ textAlign: "left" }}>丰富接口支持</td>
+      <td style={{ textAlign: "left" }}>
+        USB 接口：1 x Type-C（数据）+ 4 x USB3.0（扩展）<br />
+        无线通信：双频 WiFi6 + 蓝牙 5.4<br />
+        调试接口：Micro USB 串口<br />
+        扩展接口：预留 I2C、GPIO 等功能接口
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>机械规格</strong></td>
+      <td style={{ textAlign: "left" }}>整机工程参数</td>
+      <td style={{ textAlign: "left" }}>
+        机身尺寸：373mm（高）x 186mm（宽）x 106mm（厚）<br />
+        整机重量：2.05KG（含电池）<br />
+        负载能力：最大载重 500g<br />
+        运动性能：最大步速 16cm/s
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>操作系统</strong></td>
+      <td style={{ textAlign: "left" }}>软件开发环境</td>
+      <td style={{ textAlign: "left" }}>
+        操作系统：Ubuntu 22.04 LTS<br />
+        机器人框架：ROS2 Humble<br />
+        开发平台：TogetheROS.Bot
+      </td>
+    </tr>
+    <tr>
+      <td style={{ textAlign: "left" }}><strong>开发支持</strong></td>
+      <td style={{ textAlign: "left" }}>全栈开发能力</td>
+      <td style={{ textAlign: "left" }}>
+        编程语言：Python / C / C++ / JavaScript 多语言支持<br />
+        移动控制：iOS / Android APP 远程操作<br />
+        开发工具：可视化动作编辑器、仿真环境<br />
+        二次开发：提供完整 API 接口文档
+      </td>
+    </tr>
+  </tbody>
+</table>

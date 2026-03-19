@@ -1,0 +1,566 @@
+# OpenClaw 部署指南
+
+> **一句话介绍：OpenClaw 就是一个住在你电脑里的 AI 管家。**
+
+你知道 ChatGPT 吧？OpenClaw 就像是一个加强版的 ChatGPT，但它不只是跟你聊天——它**真的能帮你干活**：
+
+- 帮你发邮件、管日历
+- 帮你操作浏览器，自动填表、抓数据
+- 帮你管理文件、执行命令
+- 甚至能通过**微信、飞书、Telegram** 跟你对话
+
+
+
+## 手把手安装教程（一步一步来）
+
+### 最简单の一键安装（推荐新手）
+
+#### 第 1 步：打开终端
+
+- **Mac 用户**：按 `Command + 空格`，输入 `Terminal`（终端），回车打开
+- **Windows 用户**：按 `Win` 键，搜索 `PowerShell`，右键「以管理员身份运行」
+
+> **什么是终端？** 简单说就是一个可以输入命令的黑色窗口。你就把它想象成跟电脑「打字聊天」的地方。
+<img width="570" height="370" alt="Screenshot 2026-03-12 at 15 33 37" src="https://github.com/user-attachments/assets/dbb38fcc-d95f-42a1-963d-3af3efb3d741" />
+
+
+
+#### 第 2 步：复制粘贴安装命令
+
+**Mac / Linux 用户**，复制这行命令，粘贴到终端，按回车：
+
+```bash
+curl -fsSL https://openclaw.ai/install.sh | bash
+```
+
+**Windows 用户**，复制这行命令，粘贴到 PowerShell，按回车：
+
+```powershell
+iwr -useb https://openclaw.ai/install.ps1 | iex
+```
+
+就这么一行，等它跑完就装好了 
+
+安装脚本会自动帮你：
+
+1. 检查你电脑上有没有 **Node.js**（没有的话会自动帮你装）
+2. 下载 **OpenClaw 本体**
+3. 启动**配置向导**，引导你完成初始设置
+
+<img width="570" height="370" alt="Screenshot 2026-03-12 at 15 41 23" src="https://github.com/user-attachments/assets/c52974bb-5a1b-4c10-a0c2-6bcafb89cfbf" />
+
+
+
+#### 第 3 步：确认安全提示
+安装成功后会OpenClaw的logo将出现在终端中
+OpenClaw 会显示一段 **Security Warning（安全提示）**，屏幕底部会出现如下选项：
+
+```
+I understand this is personal-by-default and shared/multi-user use requires lock-down. Continue?
+
+Yes / No
+```
+
+此时需要：
+
+1. 使用**键盘方向键（↑ ↓）** 进行选择
+2. 选择 **Yes**
+3. 按 **Enter 键** 确认继续
+
+这样即可继续完成 OpenClaw 的初始化配置。
+
+<img width="704" height="47" alt="Screenshot 2026-03-12 at 16 04 24" src="https://github.com/user-attachments/assets/36d411a3-c036-4636-a342-1328aebd5e21" />
+
+
+
+#### 第 5 步：选择 Onboarding 模式
+
+安装时会看到两个选项：
+
+- `QuickStart`
+- `Manual`
+
+**建议选择 `QuickStart`**，因为它更适合新手，可以先用默认配置快速完成安装；后续如果要改详细设置，再运行以下命令即可：
+
+```bash
+openclaw configure
+```
+
+**操作方法：** 看到 `QuickStart` 前面出现绿色圆点后，直接按 **Enter** 继续。
+
+<img width="499" height="50" alt="Screenshot 2026-03-12 at 16 06 39" src="https://github.com/user-attachments/assets/27a43177-92d7-4eea-9442-8eb90b1f45ff" />
+
+
+
+#### 第 6 步：选择 AI 模型提供商
+
+OpenClaw 本身只是一个 AI Agent 框架，**并不自带大模型**，所以这一步需要选择一个 AI 模型提供商。
+
+大家可以根据自己的需求、使用习惯和账号情况自行选择。如果你已经在用 OpenAI，直接选择 `OpenAI` 即可。
+
+选好后按 **Enter** 进入下一步。
+
+
+
+#### 第 7 步：选择认证方式
+
+OpenClaw 只是一个 AI Agent 框架，真正提供智能能力的是后面的模型服务，所以这一步需要完成认证并连接对应的模型提供商。
+
+如果选择 OpenAI，一般有两种常见方案：
+
+**方案 1：使用 OpenAI API Key**
+
+适合已经在 OpenAI Platform 上开通 API 的用户。先去 [OpenAI API Keys 页面](https://platform.openai.com/api-keys) 创建自己的密钥，再粘贴到 OpenClaw 里使用。
+
+> API key 可在组织设置里的 API keys 页面创建和管理。
+
+**方案 2：使用 ChatGPT 账号登录**
+
+如果界面支持直接跳转登录，也可以在浏览器中打开认证页面，登录自己的 ChatGPT 账号完成授权。Codex CLI、App 和 IDE 扩展都支持用 ChatGPT 账号或 API key 登录，默认情况下会自动打开浏览器完成登录流程。
+
+完成认证后，继续选择后面的 **AI 模型** 即可。
+
+<img width="774" height="553" alt="Screenshot 2026-03-12 at 16 24 10" src="https://github.com/user-attachments/assets/fb41ef8d-514f-4691-8d44-db20c51c9e21" />
+
+
+
+#### 第 8 步：选择 Channel
+
+这一步是选择 OpenClaw 通过哪个聊天渠道和你交互，比如 Telegram、Slack、Discord、WhatsApp 等。
+
+如果暂时还不想配置这些外部渠道，可以先选择 `Skip for now`。这些 Channel 后面都还能再添加，界面里也有提示：
+
+```
+You can add channels later via openclaw channels add
+```
+
+也就是说，现在可以先跳过，等 OpenClaw 跑起来之后，再慢慢接入 Telegram、Slack 之类的渠道。
+
+**操作方法：** 看到 `Skip for now` 前面出现绿色圆点后，按 **Enter** 继续。
+
+<img width="579" height="335" alt="Screenshot 2026-03-12 at 16 26 49" src="https://github.com/user-attachments/assets/796784a6-17e3-4418-9959-abd3661162ba" />
+
+
+
+#### 第 9 步：选择 Search provider
+
+这一步是为 OpenClaw 配置**联网搜索服务**。如果希望它以后能直接帮你搜索网页资料，可以在这里选择一个搜索提供商，例如 Brave、Gemini、Grok、Kimi 或 Perplexity。
+
+如果暂时不需要联网搜索，建议先选择 `Skip for now`。后续仍可单独配置：
+
+```bash
+openclaw configure --section web
+```
+
+**操作方法：** 看到 `Skip for now` 前面出现绿色圆点后，按 **Enter** 继续。
+
+<img width="519" height="116" alt="Screenshot 2026-03-12 at 16 31 21" src="https://github.com/user-attachments/assets/04776e90-b864-4050-abba-27ff4f6f13ff" />
+
+
+
+#### 第 10 步：选择 Skills 依赖
+这一步是安装一些 可选的 Skill 依赖。
+可以把 Skill 理解成 OpenClaw 的技能包，每个 Skill 都对应不同的扩展能力，界面里一般也会有简要说明。
+大家可以根据自己的需求选择安装一些 Skill，或者直接 Skip for now 跳过。
+如果要安装：
+用 上下方向键移动光标
+移动到想安装的 Skill 后，按 空格键勾选
+全部选好后，按 Enter 继续
+如果只是想先完成部署、让 OpenClaw 先跑起来，直接选择 Skip for now 就可以。
+
+<img width="545" height="355" alt="Screenshot 2026-03-12 at 16 37 51" src="https://github.com/user-attachments/assets/a0d38107-90ae-4fbc-904d-be56adc63243" />
+
+
+
+#### 第 11 步：是否现在配置 Skill 对应的 API Key
+
+如果前面选择了一些 Skill，安装过程中可能会继续询问是否要立即配置对应的 API Key，例如：
+
+- `GOOGLE_PLACES_API_KEY`
+- `GEMINI_API_KEY`
+- `NOTION_API_KEY`
+- `OPENAI_API_KEY`
+- `ELEVENLABS_API_KEY`
+
+这些都是某些 Skill 正常工作时需要的密钥。如果现在只是想先完成安装，这一步可以暂时**全部选择 `No`**，后面真正需要用到某个 Skill 时，再单独申请并配置对应的 Key 即可。
+
+**操作方法：** 看到每一项询问时，选择 `No`，然后按 **Enter** 继续下一步。这样不会影响 OpenClaw 先安装完成。
+
+<img width="326" height="255" alt="Screenshot 2026-03-12 at 16 42 39" src="https://github.com/user-attachments/assets/e870d63d-1e3a-45e6-89f7-93ff04caa7cf" />
+
+
+
+#### 第 12 步：选择 Hooks
+
+这一步是选择 OpenClaw 的一些自动化小功能，建议把下面 **3 个全部选上**：
+
+<table class="lesson-content-table">
+  <thead>
+    <tr>
+      <th>Hook</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`boot-md`</td>
+      <td>启动时运行 `BOOT.md`</td>
+    </tr>
+    <tr>
+      <td>`command-logger`</td>
+      <td>记录命令日志</td>
+    </tr>
+    <tr>
+      <td>`session-memory`</td>
+      <td>保存会话记忆</td>
+    </tr>
+  </tbody>
+</table>
+
+**操作方法：**
+
+1. 用**上下方向键**移动光标
+2. 按**空格键**逐一勾选这 3 项
+3. 选好后按 **Enter** 继续
+
+<img width="696" height="104" alt="Screenshot 2026-03-12 at 16 45 34" src="https://github.com/user-attachments/assets/372437ec-09e9-4407-bdff-dd539465c98a" />
+
+
+
+#### 第 13 步：选择启动方式
+到了这一步，就基本安装完成了。
+这一步是选择安装完成后如何进入 OpenClaw。建议选择 `Open the Web UI`，因为这样会直接打开网页界面，操作更直观，对新手更友好，也方便后续查看和管理 OpenClaw。
+
+**操作方法：**
+
+1. 用**上下方向键**移动到 `Open the Web UI`
+2. 确认前面变成**实心圆点**
+3. 按 **Enter** 继续
+
+<img width="479" height="568" alt="Screenshot 2026-03-12 at 16 49 23" src="https://github.com/user-attachments/assets/27c7b0cf-c127-4c97-9549-ed10978a238a" />
+
+
+
+## 部署完成，进入界面！
+
+到这里，OpenClaw 基本就已经**部署成功**了。
+
+按下 Enter 之后，系统会自动打开网页界面。进入后，可以先在聊天框里和它打个招呼，确认是否能够正常响应。
+
+### 第一次进入时，顺手完成一些基础设置：
+
+- 给你的 OpenClaw **取一个名字**
+- 设置一个喜欢的 **Emoji**
+- 选择它的**风格或聊天语气**
+
+完成这些之后，就可以开始正式使用了。欢迎来到你的专属 AI 管家 
+<img width="750" height="400" alt="Screenshot 2026-03-12 at 16 58 43" src="https://github.com/user-attachments/assets/ee8c2194-431a-4939-aa1e-3f48b6887974" />
+
+
+
+<img width="800" height="400" alt="Screenshot 2026-03-12 at 16 59 24" src="https://github.com/user-attachments/assets/b3a326f5-1722-4bf5-b291-934cbf5deb84" />
+
+
+
+# OpenClaw
+
+> 常用操作指令速查表
+
+
+
+## 启动与运行
+
+<table class="lesson-content-table">
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`openclaw gateway`</td>
+      <td>启动网关服务（核心，必须运行）</td>
+    </tr>
+    <tr>
+      <td>`openclaw gateway start`</td>
+      <td>后台启动网关</td>
+    </tr>
+    <tr>
+      <td>`openclaw gateway stop`</td>
+      <td>停止网关</td>
+    </tr>
+    <tr>
+      <td>`openclaw tui`</td>
+      <td>启动终端</td>
+    </tr>
+    <tr>
+      <td>`openclaw dashboard`</td>
+      <td>打开控制面板（可视化界面）</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+## 配置管理
+
+<table class="lesson-content-table">
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`openclaw onboard`</td>
+      <td>首次全局配置</td>
+    </tr>
+    <tr>
+      <td>`openclaw setup`</td>
+      <td>首次配置（初始化配置文件）</td>
+    </tr>
+    <tr>
+      <td>`openclaw configure`</td>
+      <td>交互式配置（设置凭据、设备等）</td>
+    </tr>
+    <tr>
+      <td>`openclaw config get`</td>
+      <td>查看当前配置</td>
+    </tr>
+    <tr>
+      <td>`openclaw config set`</td>
+      <td>设置配置项</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+## 渠道管理（连接各种聊天平台）
+
+<table class="lesson-content-table">
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`openclaw channels add`</td>
+      <td>添加渠道</td>
+    </tr>
+    <tr>
+      <td>`openclaw channels login`</td>
+      <td>登录渠道（WhatsApp、Telegram 等）</td>
+    </tr>
+    <tr>
+      <td>`openclaw channels list`</td>
+      <td>查看已连接的渠道</td>
+    </tr>
+    <tr>
+      <td>`openclaw channels logout`</td>
+      <td>退出渠道</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+## 消息发送
+
+<table class="lesson-content-table">
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`openclaw message send`</td>
+      <td>发送消息</td>
+    </tr>
+    <tr>
+      <td>`openclaw message broadcast`</td>
+      <td>群发消息</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+## 状态与诊断
+
+<table class="lesson-content-table">
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`openclaw status`</td>
+      <td>查看状态（渠道健康度、最近会话）</td>
+    </tr>
+    <tr>
+      <td>`openclaw gateway status`</td>
+      <td>查看网关状态</td>
+    </tr>
+    <tr>
+      <td>`openclaw health`</td>
+      <td>检查网关健康状态</td>
+    </tr>
+    <tr>
+      <td>`openclaw doctor`</td>
+      <td>诊断问题 + 自动修复</td>
+    </tr>
+    <tr>
+      <td>`openclaw logs`</td>
+      <td>查看日志</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+## 技能与插件
+
+<table class="lesson-content-table">
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`openclaw skills`</td>
+      <td>技能管理（安装、更新、删除）</td>
+    </tr>
+    <tr>
+      <td>`openclaw plugins`</td>
+      <td>插件管理</td>
+    </tr>
+    <tr>
+      <td>`openclaw skills install <skill>`</td>
+      <td>安装技能</td>
+    </tr>
+    <tr>
+      <td>`openclaw skills list`</td>
+      <td>列出已安装技能</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+## 记忆与会话
+
+<table class="lesson-content-table">
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`openclaw sessions`</td>
+      <td>列出历史会话</td>
+    </tr>
+    <tr>
+      <td>`openclaw memory`</td>
+      <td>搜索记忆内容</td>
+    </tr>
+    <tr>
+      <td>`openclaw agents`</td>
+      <td>管理独立代理</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+## 定时任务
+
+<table class="lesson-content-table">
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`openclaw cron`</td>
+      <td>定时任务管理</td>
+    </tr>
+    <tr>
+      <td>`openclaw cron list`</td>
+      <td>查看定时任务</td>
+    </tr>
+    <tr>
+      <td>`openclaw cron add`</td>
+      <td>添加定时任务</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+## 浏览器与节点
+
+<table class="lesson-content-table">
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`openclaw browser`</td>
+      <td>控制浏览器（自动化）</td>
+    </tr>
+    <tr>
+      <td>`openclaw nodes`</td>
+      <td>管理连接的节点（手机等）</td>
+    </tr>
+    <tr>
+      <td>`openclaw node`</td>
+      <td>单个节点控制</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+## 工具类
+
+<table class="lesson-content-table">
+  <thead>
+    <tr>
+      <th>命令</th>
+      <th>作用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`openclaw update`</td>
+      <td>更新 CLI</td>
+    </tr>
+    <tr>
+      <td>`openclaw reset`</td>
+      <td>重置配置（保留 CLI）</td>
+    </tr>
+    <tr>
+      <td>`openclaw uninstall`</td>
+      <td>完全卸载</td>
+    </tr>
+  </tbody>
+</table>
+

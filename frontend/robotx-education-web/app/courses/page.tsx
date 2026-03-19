@@ -1,129 +1,115 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useI18n } from "@/i18n/I18nProvider";
-
-type CourseCard = {
-  title: string;
-  description: string;
-  href: string;
-  image: string;
-};
-
-const PAGE_SIZE = 9;
-
-function CourseGridSection({
-  id,
-  title,
-  subtitle,
-  courses,
-}: {
-  id: string;
-  title: string;
-  subtitle: string;
-  courses: CourseCard[];
-}) {
-  const [page, setPage] = useState(1);
-  const totalPages = Math.max(1, Math.ceil(courses.length / PAGE_SIZE));
-
-  const pageItems = useMemo(
-    () => courses.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE),
-    [courses, page]
-  );
-
-  return (
-    <section id={id} className="mx-auto mt-14 max-w-7xl px-6">
-      <h2 className="text-3xl font-bold">{title}</h2>
-      <p className="mt-3 max-w-3xl text-gray-700">{subtitle}</p>
-
-      <div className={`mt-8 flex flex-wrap gap-5 ${pageItems.length < 3 ? "justify-center" : ""}`}>
-        {pageItems.map((course) => (
-          <Link
-            key={course.href}
-            href={course.href}
-            className="group relative aspect-square w-full overflow-hidden rounded-2xl border border-gray-200 sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.875rem)]"
-          >
-            <div
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-200 group-hover:scale-105"
-              style={{ backgroundImage: `url(${course.image})` }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-              <h3 className="text-lg font-semibold">{course.title}</h3>
-              <p className="mt-1 text-sm text-white/90">{course.description}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
-
-      {totalPages > 1 && (
-        <div className="mt-6 flex items-center gap-2">
-          {Array.from({ length: totalPages }).map((_, index) => {
-            const pageNumber = index + 1;
-            return (
-              <button
-                key={pageNumber}
-                type="button"
-                onClick={() => setPage(pageNumber)}
-                className={`rounded-full px-3 py-1 text-sm ${
-                  page === pageNumber ? "bg-black text-white" : "bg-gray-100 text-gray-700"
-                }`}
-              >
-                {pageNumber}
-              </button>
-            );
-          })}
-        </div>
-      )}
-    </section>
-  );
-}
+import {
+  courseCatalog,
+  courseCategories,
+  courseSubcategories,
+  getCourseBasePath,
+  pickLocaleText,
+} from "@/lib/courseCatalog";
 
 export default function CoursesPage() {
-  const { t } = useI18n();
+  const { locale } = useI18n();
 
-  const robotCourses: CourseCard[] = [
-    {
-      title: t("courses.robot.items.originman.title"),
-      description: t("courses.robot.items.originman.desc"),
-      href: "/courses/robot/humanoid/originman",
-      image: "/assets/courses/originman/originman-1.png",
-    },
-  ];
+  const categorySections = useMemo(
+    () =>
+      courseCategories.map((category) => {
+        const subcategories = courseSubcategories.filter(
+          (subcategory) => subcategory.category === category.slug,
+        );
+        const courses = courseCatalog.filter((course) => course.category === category.slug);
 
-  const aiCourses: CourseCard[] = [
-    {
-      title: t("courses.ai.items.openclaw.title"),
-      description: t("courses.ai.items.openclaw.desc"),
-      href: "/courses/ai/openclaw",
-      image: "/assets/home/openclaw-learn.webp",
-    },
-  ];
+        return {
+          ...category,
+          subcategories,
+          courses,
+        };
+      }),
+    [],
+  );
 
   return (
-    <main className="pb-16">
-      <section className="relative h-[calc(100vh-80px)] min-h-[560px] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/assets/courses/Unitree G1-4.gif')" }}
-        />
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="relative mx-auto flex h-full w-full max-w-7xl items-center pt-48 px-6">
-          <h1 className="max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl">
-            {t("courses.hero.title")}
-          </h1>
+    <main className="course-catalog-shell">
+      <section className="course-catalog-hero">
+        <div className="course-catalog-hero-media" />
+        <div className="course-catalog-hero-scrim" />
+        <div className="course-catalog-hero-content">
+          <span className="course-catalog-eyebrow">
+            {locale === "en" ? "Course Library" : "课程总览"}
+          </span>
+          <h1>{locale === "en" ? "Learn Robotics. Learn AI. Build for the future." : "学习机器人，学习 AI, 为未来而创造"}</h1>
+          {/* <p>
+            {locale === "en"
+              ? "Browse categories first, then move into focused subcategories and course tracks. Each course clearly shows which lessons are public, education-verified, or reserved for future paid access."
+              : "先浏览课程分类，再进入更具体的子分类与课程路径。每门课程都会清楚标注哪些课程公开、哪些需要教育认证、哪些未来会开放付费访问。"}
+          </p> */}
         </div>
       </section>
 
-      <CourseGridSection
-        id = "robot-course-grid"
-        title={t("courses.robot.title")}
-        subtitle={t("courses.robot.subtitle")}
-        courses={robotCourses}
-      />
+      {categorySections.map((category) => (
+        <section
+          key={category.slug}
+          id={`${category.slug}-course-grid`}
+          className={`course-catalog-section ${category.accentClassName}`}
+        >
+          <div className="course-category-header">
+            <div>
+              <span className="course-category-kicker">
+                {locale === "en" ? "Category" : "分类"}
+              </span>
+              <h2>{pickLocaleText(category.title, locale)}</h2>
+            </div>
+            <p>{pickLocaleText(category.description, locale)}</p>
+          </div>
 
-      <CourseGridSection id="ai-course-grid" title={t("courses.ai.title")} subtitle={t("courses.ai.subtitle")} courses={aiCourses} />
+          <div className="course-subcategory-strip">
+            {category.subcategories.map((subcategory) => (
+              <div key={subcategory.slug} className="course-subcategory-pill lesson-reveal">
+                <strong>{pickLocaleText(subcategory.title, locale)}</strong>
+                <span>{pickLocaleText(subcategory.description, locale)}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="course-card-grid">
+            {category.courses.map((course) => (
+              <Link
+                key={course.id}
+                href={getCourseBasePath(course)}
+                className="course-card lesson-reveal"
+              >
+                <div
+                  className="course-card-media"
+                  style={{
+                    backgroundImage: `url(${course.heroMedia.poster ?? course.heroMedia.src})`,
+                  }}
+                />
+                <div className="course-card-scrim" />
+                <div className="course-card-body">
+                  <div className="course-card-badges">
+                    <span className="course-card-badge">
+                      {pickLocaleText(courseSubcategories.find(
+                        (item) =>
+                          item.category === course.category &&
+                          item.slug === course.subcategory,
+                      )!.title, locale)}
+                    </span>
+                    <span className="course-card-badge">
+                      {course.lessons.length}
+                      {locale === "en" ? " lessons" : " 节课"}
+                    </span>
+                  </div>
+                  <h3>{pickLocaleText(course.title, locale)}</h3>
+                  <p>{pickLocaleText(course.tagline, locale)}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ))}
     </main>
   );
 }

@@ -230,7 +230,7 @@ export default function Header() {
             {mobileCoursesOpen && (
               <div className="grid gap-3 rounded-lg bg-gray-50 p-3">
                 <Link
-                  href="/courses/ai/openclaw"
+                  href="/courses/ai/foundation/openclaw"
                   className="rounded border border-gray-200 bg-white p-3"
                   onClick={() => setMobileMenuOpen(false)}
                 >

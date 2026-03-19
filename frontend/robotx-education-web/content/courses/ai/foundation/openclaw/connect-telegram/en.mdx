@@ -1,0 +1,167 @@
+# How to Connect OpenClaw with Telegram — A Step-by-Step Guide 
+
+If you've already finished deploying OpenClaw, you're ready to connect it to Telegram so it can chat with you and get things done — right inside the app.
+
+This guide will walk you through:
+
+- Creating a Telegram Bot
+- Getting your Token and pairing code
+- Configuring Telegram inside OpenClaw
+- Completing the pairing
+- Testing that everything works
+
+## I. Before You Begin
+
+Make sure you have two things ready:
+
+1. **OpenClaw is already installed**
+2. **You have a Telegram account**
+
+If OpenClaw isn't set up yet, complete the local deployment first before continuing.
+
+## II. Create a Telegram Bot and Get Your Token
+
+#### Step 1: Open Telegram and search for BotFather
+
+Type `@BotFather` in the Telegram search bar and open the chat.
+
+> BotFather is Telegram's official bot management tool. Creating bots, editing names, and getting tokens all go through it.
+
+<img width="724" height="450" alt="Screenshot 2026-03-12 at 17 19 48" src="https://github.com/user-attachments/assets/6221ad8f-317e-4c2d-90ef-3b90480e8218" />
+
+#### Step 2: Send `/newbot`
+
+Type the following in the chat:
+
+```
+/newbot
+```
+
+Then follow the prompts step by step:
+
+- Set a **display name** for your bot
+- Set a **username** for your bot
+
+> Note: The username must end in `bot` and must be unique — no one else can already be using it.
+
+Once created, BotFather will send you an **API Token** that looks something like this:
+
+```
+1234567890:AAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+This is the Bot Token you'll need when configuring OpenClaw. **Copy and save it now.**
+
+<img width="700" height="550" alt="Screenshot 2026-03-12 at 17 21 38" src="https://github.com/user-attachments/assets/e2118f00-1e13-4efd-acfd-2d0662c2a763" />
+
+## III. Configure Telegram in OpenClaw
+
+#### Step 1: Open your terminal and enter config mode
+
+Run the following command:
+
+```bash
+openclaw config
+```
+
+<img width="679" height="386" alt="Screenshot 2026-03-12 at 17 30 06" src="https://github.com/user-attachments/assets/17608fb1-bfc5-43df-b135-dc756de893ed" />
+
+#### Step 2: Select `local`
+
+If you see an environment selection prompt, choose `local` — this means you're configuring the OpenClaw instance running on this machine.
+
+#### Step 3: Go to `channels`
+
+In the configuration menu, navigate to `channels`. This is where you set up messaging integrations like Telegram, Discord, Feishu, and more.
+
+<img width="670" height="490" alt="Screenshot 2026-03-12 at 17 33 28" src="https://github.com/user-attachments/assets/c0f3e445-dd48-438b-8909-9c61d1b903ba" />
+
+#### Step 4: Select Configure/link
+
+Choose:
+
+```
+Configure/link
+```
+
+<img width="522" height="65" alt="Screenshot 2026-03-12 at 17 33 52" src="https://github.com/user-attachments/assets/8cd95189-3461-4823-9144-b7ba646a9284" />
+
+#### Step 5: Select Telegram
+
+From the platform list, select `Telegram`.
+
+<img width="493" height="334" alt="Screenshot 2026-03-12 at 17 34 08" src="https://github.com/user-attachments/assets/b0b9b0f0-40f9-4bf3-8506-ed79cac46c67" />
+
+#### Step 6: Paste your Bot Token
+
+The system will ask for your Telegram Bot Token. Paste the token you got from BotFather, confirm it looks correct, and continue.
+
+<img width="671" height="262" alt="Screenshot 2026-03-12 at 17 36 17" src="https://github.com/user-attachments/assets/433f4bae-4956-4191-9891-9654303e3681" />
+
+Then select **Finished**.
+
+<img width="268" height="320" alt="Screenshot 2026-03-12 at 17 36 50" src="https://github.com/user-attachments/assets/d42dc54f-456b-4d8e-9651-19ba39a87658" />
+
+When prompted with:
+
+```
+Configure DM access policies now? (default: pairing)
+```
+
+Select **No**.
+
+<img width="776" height="297" alt="Screenshot 2026-03-12 at 17 38 47" src="https://github.com/user-attachments/assets/d11935de-5b00-4311-8cf1-76bd38ebb576" />
+
+## IV. Get Your Pairing Code
+
+#### Step 1: Find your bot in Telegram
+
+Go back to the Telegram search bar, type in your bot's username, and open the chat.
+
+#### Step 2: Click Start
+
+Tap **Start**, or just send any message to the bot. It should respond with a **Pairing Code**.
+
+Copy and save this code — you'll need it in the next step.
+
+<img width="900" height="550" alt="Screenshot 2026-03-12 at 17 41 06" src="https://github.com/user-attachments/assets/20f8dcbe-704e-458c-b793-d2d1faed2b1f" />
+
+## V. Complete the Pairing
+
+#### Run the pairing command in your terminal
+
+Fill in your pairing code and run:
+
+```bash
+openclaw pairing approve telegram YOUR_PAIRING_CODE
+```
+
+For example:
+
+```bash
+openclaw pairing approve telegram ABCD-1234
+```
+
+If you see a success message, your Telegram bot is now **fully paired with OpenClaw**.
+
+<img width="706" height="231" alt="Screenshot 2026-03-12 at 17 42 01" src="https://github.com/user-attachments/assets/01596818-b789-4465-a4c1-eb93ce3f4b0f" />
+
+## VI. Test the Integration
+
+#### Send your bot a message in Telegram
+
+Open your bot's chat window and send a test message, like:
+
+```
+Hi
+```
+
+or:
+
+```
+Hello
+```
+
+If the bot replies, **Telegram is successfully connected to OpenClaw** 
+
+<img width="750" height="550" alt="Screenshot 2026-03-12 at 17 43 21" src="https://github.com/user-attachments/assets/1168f336-239b-4c9a-8748-243115c82a56" />

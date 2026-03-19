@@ -28,13 +28,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 py-16 md:flex-row md:items-center">
-        <div className="grid flex-1 grid-cols-1 gap-4 md:gap-0 sm:grid-cols-2">
-          <div className="rounded-2xl">
-            <Image src="/assets/home/openclaw-learn.webp" alt="AI course" width={240} height={240} className="h-full w-auto object-cover rounded-2xl" />
+      <section className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 py-16 md:flex-row md:items-center">
+        <div className="flex flex-1 gap-4 md:gap-0">
+          <div className="rounded-2xl flex-1">
+            <Image src="/assets/home/openclaw-learn.webp" alt="AI course" width={240} height={240} className="h-auto w-auto object-cover rounded-2xl" />
           </div>
-          <div className="rounded-2xl ">
-            <Image src="/assets/home/learn-openai.jpeg" alt="AI learning" width={240} height={240} className="h-full w-auto object-contain rounded-2xl" />
+          <div className="rounded-2xl flex-1 mt-20 z-10 -ml-15">
+            <Image src="/assets/home/learn-openai.jpeg" alt="AI learning" width={600} height={600} className="h-full w-auto object-contain rounded-2xl" />
           </div>
         </div>
         <div className="flex-1 space-y-4">
@@ -43,18 +43,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 pb-20 md:flex-row md:items-center">
+      <section className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 pb-20 md:flex-row md:items-center">
         <div className="flex-1 space-y-4">
           <h2 className="text-3xl font-bold">{t("home.robot.title")}</h2>
           <p className="text-base leading-7 text-gray-700">{t("home.robot.description")}</p>
         </div>
-        <div className="grid flex-1 grid-cols-1 gap-4 md:gap-0 sm:grid-cols-2">
-          <div className="rounded-2xl ">
-            <Image src="/assets/courses/originman/originman-1.png" alt="Robot course" width={240} height={240} className="h-full w-auto object-cover rounded-2xl" />
+        <div className="flex flex-1 gap-4 md:gap-0">
+          <div className="rounded-2xl grow ">
+            <Image src="/assets/courses/originman/originman-roscon-1.gif" alt="Robot course" width={640} height={640} className="h-auto w-full object-cover rounded-2xl" />
           </div>
-          <div className="rounded-2xl ">
+          {/* <div className="rounded-2xl ">
             <Image src="/assets/courses/originman/originman-core.jpg" alt="Robot project" width={640} height={640} className="h-full w-auto object-contain rounded-2xl" />
-          </div>
+          </div> */}
         </div>
       </section>
     </main>
