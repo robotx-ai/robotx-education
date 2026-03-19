@@ -230,7 +230,7 @@ export default function Header() {
             {mobileCoursesOpen && (
               <div className="grid gap-3 rounded-lg bg-gray-50 p-3">
                 <Link
-                  href="/courses/ai/foundation/openclaw"
+                  href="/courses#ai-course-grid"
                   className="rounded border border-gray-200 bg-white p-3"
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -238,7 +238,7 @@ export default function Header() {
                   <p className="text-sm text-gray-600">{t("header.tracks.aiDesc")}</p>
                 </Link>
                 <Link
-                  href="/courses/robot/humanoid/originman"
+                  href="/courses#robot-course-grid"
                   className="rounded border border-gray-200 bg-white p-3"
                   onClick={() => setMobileMenuOpen(false)}
                 >
