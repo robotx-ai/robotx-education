@@ -131,11 +131,11 @@ export default function Header() {
                 <div className="invisible absolute left-1/2 -translate-x-1/2 top-full z-50 mt-2 w-[580px] rounded-xl border border-gray-100 bg-white p-4 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:opacity-100">
                   <div className="grid grid-cols-2 gap-4">
                     <Link
-                      href="/courses#ai-course-grid"
+                      href="/courses#ai-subject-grid"
                       className="rounded-lg border border-gray-200 p-3 transition hover:border-black"
                     >
                       <Image
-                        src="/assets/home/openclaw-learn.webp"
+                        src="/assets/home/learn-openai.jpeg"
                         alt="AI course"
                         width={200}
                         height={200}
@@ -145,7 +145,7 @@ export default function Header() {
                       <p className="mt-1 text-sm text-gray-600">{t("header.tracks.aiDesc")}</p>
                     </Link>
                     <Link
-                      href="/courses#robot-course-grid"
+                      href="/courses#robot-subject-grid"
                       className="rounded-lg border border-gray-200 p-3 transition hover:border-black"
                     >
                       <Image
@@ -230,7 +230,7 @@ export default function Header() {
             {mobileCoursesOpen && (
               <div className="grid gap-3 rounded-lg bg-gray-50 p-3">
                 <Link
-                  href="/courses#ai-course-grid"
+                  href="/courses#ai-subject-grid"
                   className="rounded border border-gray-200 bg-white p-3"
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -238,10 +238,11 @@ export default function Header() {
                   <p className="text-sm text-gray-600">{t("header.tracks.aiDesc")}</p>
                 </Link>
                 <Link
-                  href="/courses#robot-course-grid"
+                  href="/courses#robot-subject-grid"
                   className="rounded border border-gray-200 bg-white p-3"
                   onClick={() => setMobileMenuOpen(false)}
                 >
+                  
                   <p className="font-semibold">{t("header.tracks.robotTitle")}</p>
                   <p className="text-sm text-gray-600">{t("header.tracks.robotDesc")}</p>
                 </Link>

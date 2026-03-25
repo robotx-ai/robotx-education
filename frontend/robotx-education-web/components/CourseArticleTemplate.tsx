@@ -126,7 +126,7 @@ export default function CourseArticleTemplate({
         className="course-template-mobile-trigger"
         onClick={() => setMobilePagesOpen((prev) => !prev)}
       >
-        <span aria-hidden="true">≡</span>
+        <span aria-hidden="true">=</span>
       </button>
 
       {mobilePagesOpen && (

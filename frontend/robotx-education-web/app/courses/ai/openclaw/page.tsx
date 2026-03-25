@@ -1,13 +1,5 @@
-import { notFound } from "next/navigation";
-import CourseLandingPage from "@/components/CourseLandingPage";
-import { getCourse } from "@/lib/courseCatalog";
+import { redirect } from "next/navigation";
 
-export default function OpenClawLegacyCoursePage() {
-  const course = getCourse("ai", "foundation", "openclaw");
-
-  if (!course) {
-    notFound();
-  }
-
-  return <CourseLandingPage course={course} />;
+export default function OpenClawLegacySubjectPage() {
+  redirect("/courses/ai/foundation/openclaw");
 }

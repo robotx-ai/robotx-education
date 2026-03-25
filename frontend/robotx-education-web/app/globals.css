@@ -330,7 +330,7 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1rem;
-    max-width: 56rem;
+    max-width: 36rem;
     margin-top: 0.75rem;
   }
 
@@ -352,7 +352,7 @@ header {
     padding: 1rem 1.1rem;
   }
 
-  .course-hero-stat-label {
+  .course-hero-stat-label,.course-hero-stat strong {
     display: block;
     margin-bottom: 0.3rem;
     font-size: 0.75rem;
@@ -366,11 +366,49 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.25rem;
-    max-width: 78rem;
-    margin: -3.4rem auto 0;
+    max-width: 48rem;
+    margin: -3.4rem 0 0;
     padding: 0 1.5rem;
     position: relative;
     z-index: 2;
+  }
+
+  .course-language-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 70;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(4px);
+  }
+
+  .course-language-modal {
+    width: min(30rem, 100%);
+    border: 1px solid var(--border-soft);
+    border-radius: 1.5rem;
+    background: var(--surface-strong);
+    box-shadow: var(--shadow-soft);
+    padding: 1.5rem;
+  }
+
+  .course-language-modal h2 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0f172a;
+  }
+
+  .course-language-modal p {
+    margin-top: 0.8rem;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #475569;
+  }
+
+  .course-language-modal-button {
+    margin-top: 1rem;
   }
 
   .course-overview-card {
@@ -623,6 +661,7 @@ header {
     flex-direction: column;
     gap: 0.8rem;
     margin-bottom: 1.1rem;
+    scroll-margin-top: 7rem;
   }
 
   .lesson-heading {
@@ -731,6 +770,32 @@ header {
 
   .lesson-embed-frame {
     min-height: 22rem;
+  }
+
+  .lesson-pdf-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .lesson-pdf-frame-wrap {
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+    border-radius: 1.4rem;
+    background: #f8fafc;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .lesson-pdf-frame {
+    display: block;
+    width: 100%;
+    min-height: 72vh;
+    border: 0;
+    background: white;
+  }
+
+  .lesson-pdf-open-link {
+    width: fit-content;
   }
 
   .lesson-code-block {

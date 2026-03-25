@@ -1,54 +1,69 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useMemo, useState } from "react";
 import CourseArticleTemplate from "@/components/CourseArticleTemplate";
 import { useI18n } from "@/i18n/I18nProvider";
 import { useViewerAccess } from "@/hooks/useViewerAccess";
 import {
   type CourseRecord,
   type LessonRecord,
-  getLessonHref,
+  type Locale,
+  type SubjectRecord,
+  getCourseLessonPath,
+  getCoursePath,
+  getLessonPdfUrl,
+  getLessonSupportedLocales,
   pickLocaleText,
 } from "@/lib/courseCatalog";
 import { lessonContentRegistry } from "@/lib/lessonContentRegistry";
 
-const accessCopy = {
-  open: {
-    en: "Open access",
-    zh: "公开访问",
-  },
-  edu: {
-    en: "Education verified",
-    zh: "教育认证访问",
-  },
-  paid: {
-    en: "Paid access",
-    zh: "付费访问",
-  },
-} as const;
+function getLanguageName(locale: Locale, t: (key: string) => string) {
+  return locale === "en" ? t("coursesUi.languageEnglish") : t("coursesUi.languageChinese");
+}
 
 export default function CourseLessonPage({
+  subject,
   course,
   lesson,
 }: {
+  subject: SubjectRecord;
   course: CourseRecord;
   lesson: LessonRecord;
 }) {
-  const { locale } = useI18n();
+  const { locale, t } = useI18n();
   const { loading, loggedIn, eduVerified } = useViewerAccess();
   const lessonModules = lessonContentRegistry[lesson.id];
-  const LessonContent = lessonModules?.[locale] ?? lessonModules?.en;
+  const supportedLocales = lessonModules
+    ? ([lessonModules.en ? "en" : null, lessonModules.zh ? "zh" : null].filter(Boolean) as Locale[])
+    : getLessonSupportedLocales(lesson);
+  const [languageNoticeDismissed, setLanguageNoticeDismissed] = useState(false);
+
+  const resolvedLocale = useMemo<Locale | null>(() => {
+    if (supportedLocales.includes(locale)) return locale;
+    if (supportedLocales.includes("en")) return "en";
+    if (supportedLocales.includes("zh")) return "zh";
+    return null;
+  }, [locale, supportedLocales]);
+
+  useEffect(() => {
+    setLanguageNoticeDismissed(false);
+  }, [lesson.id, locale, resolvedLocale]);
+
+  const LessonContent = lessonModules && resolvedLocale ? lessonModules[resolvedLocale] : null;
+  const lessonPdfUrl = getLessonPdfUrl(lesson);
 
   const pages = course.lessons.map((entry) => ({
     label: pickLocaleText(entry.title, locale),
-    href: getLessonHref(course, entry),
+    href: getCourseLessonPath(subject, course, entry),
   }));
 
-  const isLockedForLogin = lesson.access === "edu" && !loggedIn;
-  const isLockedForVerification = lesson.access === "edu" && loggedIn && !eduVerified;
-  const isPaid = lesson.access === "paid";
+  const isLockedForLogin = course.access === "edu" && !loggedIn;
+  const isLockedForVerification = course.access === "edu" && loggedIn && !eduVerified;
+  const isPaid = course.access === "paid";
+  const isFallbackLocale = Boolean(resolvedLocale && resolvedLocale !== locale);
 
-  if (!LessonContent) {
+  if ((!LessonContent && !lessonPdfUrl) || !resolvedLocale) {
     return null;
   }
 
@@ -56,10 +71,7 @@ export default function CourseLessonPage({
     <main className="course-lesson-shell">
       <section className="course-lesson-hero">
         <div className="course-lesson-hero-copy">
-          <span className={`course-access-pill course-access-pill-${lesson.access}`}>
-            {accessCopy[lesson.access][locale]}
-          </span>
-          <h1>{pickLocaleText(lesson.title, locale)}</h1>
+          <h1>{pickLocaleText(course.title, locale)}</h1>
           <p>{pickLocaleText(lesson.summary, locale)}</p>
         </div>
       </section>
@@ -67,78 +79,107 @@ export default function CourseLessonPage({
       {loading ? (
         <section className="course-gate-shell">
           <div className="course-gate-card">
-            <h2>{locale === "en" ? "Checking access" : "正在检查访问权限"}</h2>
-            <p>
-              {locale === "en"
-                ? "Loading your lesson access and profile state."
-                : "正在加载你的课程访问权限与个人状态。"}
-            </p>
+            <h2>{t("coursesUi.checkingAccessTitle")}</h2>
+            <p>{t("coursesUi.checkingLessonAccessBody")}</p>
           </div>
         </section>
       ) : isLockedForLogin || isLockedForVerification || isPaid ? (
         <section className="course-gate-shell">
           <div className="course-gate-card">
-            <span className={`course-access-pill course-access-pill-${lesson.access}`}>
-              {accessCopy[lesson.access][locale]}
-            </span>
             <h2>
               {isPaid
-                ? locale === "en"
-                  ? "This lesson is reserved for future paid access"
-                  : "该课程将作为未来的付费内容开放"
+                ? t("coursesUi.paidLockedTitle")
                 : isLockedForVerification
-                  ? locale === "en"
-                    ? "Educational verification is required"
-                    : "需要完成教育认证"
-                  : locale === "en"
-                    ? "Log in to continue"
-                    : "请先登录后继续"}
+                  ? t("coursesUi.eduRequiredTitle")
+                  : t("coursesUi.loginRequiredTitle")}
             </h2>
             <p>
               {isPaid
-                ? locale === "en"
-                  ? "The lesson structure is ready, but paid entitlements are not enabled yet."
-                  : "课程结构已准备完成，但付费权限系统暂未开启。"
+                ? t("coursesUi.paidLockedBody")
                 : isLockedForVerification
-                  ? locale === "en"
-                    ? "This lesson is available to verified students, educators, and nonprofit organizations."
-                    : "该课程面向已完成认证的学生、教育工作者与非营利组织开放。"
-                  : locale === "en"
-                    ? "Sign in first, then return here to continue the guided lesson."
-                    : "请先登录，再返回此处继续学习。"}
+                  ? t("coursesUi.eduRequiredBody")
+                  : t("coursesUi.loginRequiredBody")}
             </p>
             <div className="course-gate-actions">
               {isLockedForLogin && (
                 <Link href="/login" className="course-gate-primary">
-                  {locale === "en" ? "Go to log in" : "前往登录"}
+                  {t("coursesUi.goToLogin")}
                 </Link>
               )}
               {isLockedForVerification && (
                 <Link href="/profile" className="course-gate-primary">
-                  {locale === "en" ? "Verify in profile" : "前往个人中心认证"}
+                  {t("coursesUi.verifyInProfile")}
                 </Link>
               )}
-              <Link href={getLessonHref(course, course.lessons[0]!)} className="course-gate-secondary">
-                {locale === "en" ? "Back to course overview" : "返回课程概览"}
+              <Link href={getCoursePath(subject, course)} className="course-gate-secondary">
+                {t("coursesUi.backToCourse")}
               </Link>
             </div>
           </div>
         </section>
       ) : (
-        <CourseArticleTemplate
-          tocTitle={locale === "en" ? "On this page" : "本页目录"}
-          pagesTitle={locale === "en" ? "Lessons" : "课程目录"}
-          pagesButtonLabel={locale === "en" ? "Open lesson menu" : "打开课程菜单"}
-          pages={pages}
-        >
-          <div className="course-article-intro">
-            <span className={`course-access-pill course-access-pill-${lesson.access}`}>
-              {accessCopy[lesson.access][locale]}
-            </span>
-            <p className="course-article-summary">{pickLocaleText(lesson.summary, locale)}</p>
-          </div>
-          <LessonContent />
-        </CourseArticleTemplate>
+        <>
+          <CourseArticleTemplate
+            tocTitle={t("coursesUi.onThisPage")}
+            pagesTitle={t("coursesUi.lessonsList")}
+            pagesButtonLabel={t("coursesUi.openLessonMenu")}
+            pages={pages}
+          >
+            <div className="course-article-intro">
+              <p className="course-article-summary">{pickLocaleText(lesson.summary, locale)}</p>
+            </div>
+
+            {LessonContent ? (
+              <LessonContent />
+            ) : lessonPdfUrl ? (
+              <section className="lesson-pdf-shell">
+                <h2 className="lesson-heading lesson-heading-2">
+                  {t("coursesUi.lessonSlidesTitle")}
+                </h2>
+                <p className="lesson-copy">{t("coursesUi.lessonSlidesDescription")}</p>
+                <div className="lesson-pdf-frame-wrap">
+                  <iframe
+                    src={`${lessonPdfUrl}#view=FitH`}
+                    title={pickLocaleText(lesson.title, resolvedLocale)}
+                    className="lesson-pdf-frame"
+                  />
+                </div>
+                <h2 className="lesson-heading lesson-heading-2">
+                  {t("coursesUi.resourcesTitle")}
+                </h2>
+                <p className="lesson-copy">{t("coursesUi.resourcesDescription")}</p>
+                <a
+                  href={lessonPdfUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="course-lesson-cta lesson-pdf-open-link"
+                >
+                  {t("coursesUi.openLessonPdf")}
+                </a>
+              </section>
+            ) : null}
+          </CourseArticleTemplate>
+
+          {isFallbackLocale && !languageNoticeDismissed && (
+            <div className="course-language-modal-overlay">
+              <div className="course-language-modal">
+                <h2>{t("coursesUi.languageNoticeTitle")}</h2>
+                <p>
+                  {t("coursesUi.languageNoticeBody")
+                    .replace("{supported}", getLanguageName(resolvedLocale, t))
+                    .replace("{unsupported}", getLanguageName(locale, t))}
+                </p>
+                <button
+                  type="button"
+                  className="course-gate-primary course-language-modal-button"
+                  onClick={() => setLanguageNoticeDismissed(true)}
+                >
+                  {t("coursesUi.iUnderstand")}
+                </button>
+              </div>
+            </div>
+          )}
+        </>
       )}
     </main>
   );

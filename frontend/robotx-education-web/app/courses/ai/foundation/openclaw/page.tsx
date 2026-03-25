@@ -1,13 +1,13 @@
 import { notFound } from "next/navigation";
 import CourseLandingPage from "@/components/CourseLandingPage";
-import { getCourse } from "@/lib/courseCatalog";
+import { getSubject } from "@/lib/courseCatalog";
 
-export default function OpenClawCoursePage() {
-  const course = getCourse("ai", "foundation", "openclaw");
+export default function OpenClawSubjectPage() {
+  const subject = getSubject("ai", "foundation", "openclaw");
 
-  if (!course) {
+  if (!subject) {
     notFound();
   }
 
-  return <CourseLandingPage course={course} />;
+  return <CourseLandingPage subject={subject} />;
 }
