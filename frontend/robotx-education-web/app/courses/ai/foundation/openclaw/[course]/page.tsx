@@ -2,7 +2,9 @@ import { notFound } from "next/navigation";
 import SubjectCoursePage from "@/components/SubjectCoursePage";
 import { getSubject, getSubjectCourse } from "@/lib/courseCatalog";
 
-export function generateStaticParams() {
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
   const subject = getSubject("ai", "foundation", "openclaw");
   return (subject?.courses ?? []).map((course) => ({ course: course.slug }));
 }

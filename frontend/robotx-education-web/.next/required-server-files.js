@@ -2,7 +2,6 @@ self.__SERVER_FILES_MANIFEST={
   "version": 1,
   "config": {
     "env": {},
-    "webpack": null,
     "typescript": {
       "ignoreBuildErrors": false
     },
@@ -15,10 +14,10 @@ self.__SERVER_FILES_MANIFEST={
     "useFileSystemPublicRoutes": true,
     "generateEtags": true,
     "pageExtensions": [
-      "tsx",
       "ts",
-      "jsx",
-      "js"
+      "tsx",
+      "md",
+      "mdx"
     ],
     "poweredByHeader": true,
     "compress": true,
@@ -294,6 +293,29 @@ self.__SERVER_FILES_MANIFEST={
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "turbopack": {
+      "rules": {
+        "{*,next-mdx-rule}": [
+          {
+            "loaders": [
+              {
+                "loader": "C:\\Users\\qingy\\OneDrive\\Desktop\\Work\\RobotX\\robotx-education\\frontend\\robotx-education-web\\node_modules\\@next\\mdx\\mdx-js-loader.js",
+                "options": {
+                  "providerImportSource": "next-mdx-import-source-file",
+                  "remarkPlugins": [],
+                  "rehypePlugins": []
+                }
+              }
+            ],
+            "as": "*.tsx",
+            "condition": {
+              "path": {}
+            }
+          }
+        ]
+      },
+      "resolveAlias": {
+        "next-mdx-import-source-file": "@vercel/turbopack-next/mdx-import-source"
+      },
       "root": "C:\\Users\\qingy\\OneDrive\\Desktop\\Work\\RobotX\\robotx-education\\frontend\\robotx-education-web"
     },
     "distDirRoot": ".next"

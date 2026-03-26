@@ -20,7 +20,59 @@
     "afterFiles": [],
     "fallback": []
   },
-  "dynamicRoutes": [],
+  "dynamicRoutes": [
+    {
+      "page": "/courses/ai/foundation/openclaw/[course]",
+      "regex": "^/courses/ai/foundation/openclaw/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcourse": "nxtPcourse"
+      },
+      "namedRegex": "^/courses/ai/foundation/openclaw/(?<nxtPcourse>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/courses/ai/foundation/openclaw/[course]/[lesson]",
+      "regex": "^/courses/ai/foundation/openclaw/([^/]+?)/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcourse": "nxtPcourse",
+        "nxtPlesson": "nxtPlesson"
+      },
+      "namedRegex": "^/courses/ai/foundation/openclaw/(?<nxtPcourse>[^/]+?)/(?<nxtPlesson>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/courses/robot/humanoid/originman/[course]",
+      "regex": "^/courses/robot/humanoid/originman/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcourse": "nxtPcourse"
+      },
+      "namedRegex": "^/courses/robot/humanoid/originman/(?<nxtPcourse>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "regex": "^/courses/robot/humanoid/originman/([^/]+?)/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcourse": "nxtPcourse",
+        "nxtPlesson": "nxtPlesson"
+      },
+      "namedRegex": "^/courses/robot/humanoid/originman/(?<nxtPcourse>[^/]+?)/(?<nxtPlesson>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/courses/robot/ros/robot-operating-system/[course]",
+      "regex": "^/courses/robot/ros/robot\\-operating\\-system/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcourse": "nxtPcourse"
+      },
+      "namedRegex": "^/courses/robot/ros/robot\\-operating\\-system/(?<nxtPcourse>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/courses/robot/ros/robot-operating-system/[course]/[lesson]",
+      "regex": "^/courses/robot/ros/robot\\-operating\\-system/([^/]+?)/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcourse": "nxtPcourse",
+        "nxtPlesson": "nxtPlesson"
+      },
+      "namedRegex": "^/courses/robot/ros/robot\\-operating\\-system/(?<nxtPcourse>[^/]+?)/(?<nxtPlesson>[^/]+?)(?:/)?$"
+    }
+  ],
   "staticRoutes": [
     {
       "page": "/",
@@ -59,6 +111,12 @@
       "namedRegex": "^/courses(?:/)?$"
     },
     {
+      "page": "/courses/ai/foundation/openclaw",
+      "regex": "^/courses/ai/foundation/openclaw(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/courses/ai/foundation/openclaw(?:/)?$"
+    },
+    {
       "page": "/courses/ai/openclaw",
       "regex": "^/courses/ai/openclaw(?:/)?$",
       "routeKeys": {},
@@ -71,16 +129,10 @@
       "namedRegex": "^/courses/robot/humanoid/originman(?:/)?$"
     },
     {
-      "page": "/courses/robot/humanoid/originman/quick_start",
-      "regex": "^/courses/robot/humanoid/originman/quick_start(?:/)?$",
+      "page": "/courses/robot/ros/robot-operating-system",
+      "regex": "^/courses/robot/ros/robot\\-operating\\-system(?:/)?$",
       "routeKeys": {},
-      "namedRegex": "^/courses/robot/humanoid/originman/quick_start(?:/)?$"
-    },
-    {
-      "page": "/courses/robot/humanoid/originman/user_guide",
-      "regex": "^/courses/robot/humanoid/originman/user_guide(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/courses/robot/humanoid/originman/user_guide(?:/)?$"
+      "namedRegex": "^/courses/robot/ros/robot\\-operating\\-system(?:/)?$"
     },
     {
       "page": "/donation",

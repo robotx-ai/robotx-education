@@ -2,16 +2,16 @@ import { notFound } from "next/navigation";
 import CourseLessonPage from "@/components/CourseLessonPage";
 import { getCourseLesson, getSubject, getSubjectCourse } from "@/lib/courseCatalog";
 
-export function generateStaticParams() {
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
   const subject = getSubject("ai", "foundation", "openclaw");
 
   return (subject?.courses ?? []).flatMap((course) =>
-    course.lessons.length <= 1
-      ? []
-      : course.lessons.map((lesson) => ({
-          course: course.slug,
-          lesson: lesson.slug,
-        })),
+    course.lessons.map((lesson) => ({
+      course: course.slug,
+      lesson: lesson.slug,
+    })),
   );
 }
 
@@ -31,3 +31,4 @@ export default async function OpenClawCourseLessonPage({
 
   return <CourseLessonPage subject={subject} course={course} lesson={lesson} />;
 }
+

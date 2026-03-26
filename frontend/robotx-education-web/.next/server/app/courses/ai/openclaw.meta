@@ -1,5 +1,7 @@
 {
+  "status": 307,
   "headers": {
+    "location": "/courses/ai/foundation/openclaw",
     "x-nextjs-stale-time": "300",
     "x-nextjs-prerender": "1",
     "x-next-cache-tags": "_N_T_/layout,_N_T_/courses/layout,_N_T_/courses/ai/layout,_N_T_/courses/ai/openclaw/layout,_N_T_/courses/ai/openclaw/page,_N_T_/courses/ai/openclaw"
