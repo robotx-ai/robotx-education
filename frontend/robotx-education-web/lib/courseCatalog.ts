@@ -349,6 +349,326 @@ const rosIntroLessons: LessonRecord[] = rosIntroLessonsRaw.map((lesson, index) =
   supportedLocales: ["zh"],
 }));
 
+const originmanComingSoonDuration: LocaleText = {
+  en: "Coming soon",
+  zh: "即将上线",
+};
+
+const originmanExpandedCourses: CourseRecord[] = [
+  {
+    id: "originman-foundation-course",
+    slug: "foundation-basics",
+    title: { en: "Foundations", zh: "基础入门篇" },
+    summary: {
+      en: "Build a confident starting point with hardware orientation, safe operation, environment setup, and the first system test.",
+      zh: "从硬件认知、安全操作、开发环境部署到首次运行测试，建立完整的 OriginMan 入门基础。",
+    },
+    access: "open",
+    duration: { en: "4 lessons", zh: "4 课时" },
+    lessons: [
+      {
+        id: "originman-foundation-lesson-01",
+        slug: "lesson-1",
+        title: {
+          en: "Lesson 1: Course Introduction and OriginMan Hardware Overview",
+          zh: "第1课：课程介绍与 OriginMan 硬件认知",
+        },
+        summary: {
+          en: "Get familiar with the course structure and the core hardware modules that make up OriginMan.",
+          zh: "认识课程结构，并了解 OriginMan 的核心硬件模块与整体组成。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-foundation-lesson-02",
+        slug: "lesson-2",
+        title: {
+          en: "Lesson 2: System Boot, Charging, and Safe Operation",
+          zh: "第2课：系统开机、充电与安全操作",
+        },
+        summary: {
+          en: "Learn the correct startup flow, charging process, and safety practices for daily use.",
+          zh: "学习正确的开机流程、充电方法与日常使用中的安全规范。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-foundation-lesson-03",
+        slug: "lesson-3",
+        title: {
+          en: "Lesson 3: Development Environment Setup (Ubuntu + ROS2)",
+          zh: "第3课：开发环境部署（Ubuntu+ROS2）",
+        },
+        summary: {
+          en: "Set up the Ubuntu and ROS2 environment required for OriginMan development.",
+          zh: "完成 OriginMan 开发所需的 Ubuntu 与 ROS2 环境部署。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-foundation-lesson-04",
+        slug: "lesson-4",
+        title: {
+          en: "Lesson 4: Basic Commands and the First Test Run",
+          zh: "第4课：基础命令与第一次运行测试",
+        },
+        summary: {
+          en: "Practice essential commands and complete the first successful OriginMan runtime test.",
+          zh: "掌握基础命令，并完成第一次 OriginMan 运行测试。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+    ],
+  },
+  {
+    id: "originman-hardware-drivers-course",
+    slug: "hardware-and-drivers",
+    title: { en: "Hardware and Drivers", zh: "硬件与驱动篇" },
+    summary: {
+      en: "Move deeper into actuation, sensing, communication, power management, and maintenance workflows.",
+      zh: "进一步学习执行系统、传感器、通信协议、电源管理与硬件维护等核心能力。",
+    },
+    access: "edu",
+    duration: { en: "6 lessons", zh: "6 课时" },
+    lessons: [
+      {
+        id: "originman-hardware-lesson-01",
+        slug: "lesson-1",
+        title: {
+          en: "Lesson 1: Servo Drivers and Degrees-of-Freedom Control",
+          zh: "第1课：舵机驱动与自由度控制",
+        },
+        summary: {
+          en: "Understand how OriginMan servos are driven and how joint degrees of freedom are controlled.",
+          zh: "理解 OriginMan 舵机驱动方式，以及各关节自由度的控制逻辑。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-hardware-lesson-02",
+        slug: "lesson-2",
+        title: {
+          en: "Lesson 2: Working with Sensors (Camera, Microphone, IMU)",
+          zh: "第2课：传感器使用（摄像头、麦克风、IMU）",
+        },
+        summary: {
+          en: "Explore how to access and use the camera, microphone, and IMU in development workflows.",
+          zh: "学习在开发过程中接入并使用摄像头、麦克风与 IMU 等传感器。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-hardware-lesson-03",
+        slug: "lesson-3",
+        title: {
+          en: "Lesson 3: Communication Protocols and Host-Controller Interaction",
+          zh: "第3课：通信协议与上下位机交互",
+        },
+        summary: {
+          en: "Learn how the upper and lower controllers communicate and how data flows across the robot system.",
+          zh: "学习上下位机之间的通信协议，以及机器人系统中的数据交互方式。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-hardware-lesson-04",
+        slug: "lesson-4",
+        title: {
+          en: "Lesson 4: Motor PID Tuning and Gait Fundamentals",
+          zh: "第4课：电机 PID 调试与步态基础",
+        },
+        summary: {
+          en: "Tune motor control behavior and understand the fundamentals that support stable gait development.",
+          zh: "掌握电机 PID 调试方法，并理解稳定步态开发所需的基础知识。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-hardware-lesson-05",
+        slug: "lesson-5",
+        title: {
+          en: "Lesson 5: Power Management and Low-Power Configuration",
+          zh: "第5课：电源管理与低功耗设置",
+        },
+        summary: {
+          en: "Manage battery, power delivery, and low-power settings for safer and longer robot operation.",
+          zh: "学习电池、电源分配与低功耗设置，提升机器人运行的安全性与续航表现。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-hardware-lesson-06",
+        slug: "lesson-6",
+        title: {
+          en: "Lesson 6: Hardware Troubleshooting and Maintenance",
+          zh: "第6课：硬件故障排查与维护",
+        },
+        summary: {
+          en: "Build a practical workflow for identifying hardware issues and maintaining OriginMan reliably.",
+          zh: "建立硬件故障排查与维护流程，提升 OriginMan 的稳定使用能力。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+    ],
+  },
+  {
+    id: "originman-feature-development-course",
+    slug: "feature-development",
+    title: { en: "Feature Development", zh: "功能开发篇" },
+    summary: {
+      en: "Develop practical visual, voice, localization, and AI interaction capabilities on top of the robot platform.",
+      zh: "围绕视觉、语音、定位与大模型交互等方向，构建 OriginMan 的实用功能能力。",
+    },
+    access: "edu",
+    duration: { en: "6 lessons", zh: "6 课时" },
+    lessons: [
+      {
+        id: "originman-feature-lesson-01",
+        slug: "lesson-1",
+        title: {
+          en: "Lesson 1: Vision Basics - Image Capture and Display",
+          zh: "第1课：视觉基础：图像采集与显示",
+        },
+        summary: {
+          en: "Start with the vision pipeline by acquiring, reading, and displaying image streams from the robot.",
+          zh: "从图像采集、读取与显示开始，搭建 OriginMan 的视觉处理基础流程。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-feature-lesson-02",
+        slug: "lesson-2",
+        title: {
+          en: "Lesson 2: Color Recognition and Target Tracking",
+          zh: "第2课：颜色识别与目标跟踪",
+        },
+        summary: {
+          en: "Use visual cues to detect colors and track targets in a practical robotics scenario.",
+          zh: "结合视觉信息完成颜色识别与目标跟踪等典型机器人任务。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-feature-lesson-03",
+        slug: "lesson-3",
+        title: {
+          en: "Lesson 3: Visual Line Following and Path Tracking",
+          zh: "第3课：视觉巡线与路径跟随",
+        },
+        summary: {
+          en: "Implement visual line following and path-tracking behaviors for autonomous movement tasks.",
+          zh: "实现视觉巡线与路径跟随，让机器人具备基础自主移动能力。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-feature-lesson-04",
+        slug: "lesson-4",
+        title: {
+          en: "Lesson 4: Speech Recognition and Speech Synthesis",
+          zh: "第4课：语音识别与语音合成",
+        },
+        summary: {
+          en: "Add basic voice interaction through speech recognition and synthesized spoken output.",
+          zh: "通过语音识别与语音合成，构建 OriginMan 的基础语音交互能力。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-feature-lesson-05",
+        slug: "lesson-5",
+        title: {
+          en: "Lesson 5: AprilTag Visual Localization",
+          zh: "第5课：AprilTag 视觉定位",
+        },
+        summary: {
+          en: "Use AprilTag markers to support spatial perception and visual localization tasks.",
+          zh: "使用 AprilTag 标记完成空间感知与视觉定位相关任务。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-feature-lesson-06",
+        slug: "lesson-6",
+        title: {
+          en: "Lesson 6: Large-Model Interaction and AI Dialogue",
+          zh: "第6课：大模型交互与 AI 对话",
+        },
+        summary: {
+          en: "Connect OriginMan to large-model workflows for dialogue, reasoning, and interactive behaviors.",
+          zh: "将 OriginMan 接入大模型工作流，构建对话、理解与智能交互能力。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+    ],
+  },
+  {
+    id: "originman-project-practice-course",
+    slug: "integrated-projects",
+    title: { en: "Integrated Practice", zh: "综合实战篇" },
+    summary: {
+      en: "Bring multiple robot capabilities together in project-based scenarios, demonstrations, and final optimization.",
+      zh: "在综合项目与场景化任务中联动多项机器人能力，完成展示、答辩与作品优化。",
+    },
+    access: "edu",
+    duration: { en: "4 lessons", zh: "4 课时" },
+    lessons: [
+      {
+        id: "originman-project-lesson-01",
+        slug: "lesson-1",
+        title: {
+          en: "Lesson 1: Human Motion Imitation Learning",
+          zh: "第1课：人体动作模仿学习",
+        },
+        summary: {
+          en: "Explore how OriginMan can observe and reproduce human motion patterns.",
+          zh: "探索 OriginMan 对人体动作的识别、学习与模仿方式。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-project-lesson-02",
+        slug: "lesson-2",
+        title: {
+          en: "Lesson 2: Integrated Motion Programming for Kicking, Dancing, and More",
+          zh: "第2课：踢球 / 舞蹈等综合动作编程",
+        },
+        summary: {
+          en: "Program multi-step actions such as kicking and dancing as complete interactive robot behaviors.",
+          zh: "完成踢球、舞蹈等综合动作编程，形成完整的机器人行为表现。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-project-lesson-03",
+        slug: "lesson-3",
+        title: {
+          en: "Lesson 3: Multi-Task Coordination and Scenario Development",
+          zh: "第3课：多任务联动与场景化开发",
+        },
+        summary: {
+          en: "Combine multiple robot modules into scenario-driven projects with coordinated task execution.",
+          zh: "将多项机器人能力整合进场景化开发任务，实现多任务协同联动。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+      {
+        id: "originman-project-lesson-04",
+        slug: "lesson-4",
+        title: {
+          en: "Lesson 4: Project Defense and Showcase Optimization",
+          zh: "第4课：项目答辩与作品优化",
+        },
+        summary: {
+          en: "Refine the final project, improve presentation quality, and prepare for demo-day review.",
+          zh: "完善最终项目内容，提升展示效果，并为答辩与成果展示做好准备。",
+        },
+        duration: originmanComingSoonDuration,
+      },
+    ],
+  },
+];
+
 export const courseCategories: CategoryRecord[] = [
   {
     slug: "robot",
@@ -465,6 +785,7 @@ export const subjectCatalog: SubjectRecord[] = [
           },
         ],
       },
+      ...originmanExpandedCourses,
     ],
   },
   {

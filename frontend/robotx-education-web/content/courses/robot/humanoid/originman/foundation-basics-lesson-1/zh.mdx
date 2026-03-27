@@ -1,0 +1,84 @@
+# 课程介绍与 OriginMan 硬件认知
+
+本课将介绍已完成组装的 OriginMan 产品清单、主要硬件组成、常用软件下载，以及后续 SD 卡镜像安装与备份部分的预留内容。
+
+## 1. 产品清单
+
+![OriginMan parts list](/assets/courses/originman/basic/product-list.jpg)
+
+OriginMan 已完成组装。
+
+原始内容中提到的配图暂未添加，你可以在后续拿到正式素材后补充到本课中。
+
+### OriginMan 主控制器（`RDK X5-8GB`）
+
+D-Robotics `RDK X5` 搭载 `Sunrise 5` 智能计算芯片，可提供高达 `10 TOPS` 的算力，是一款面向智能计算与机器人应用的全能开发套件。它接口丰富、易于使用，并支持 `Transformer`、`RWKV`、`Occupancy`、`Stereo Perception` 等多种复杂模型和最新算法，加速智能化应用快速落地。
+
+- CPU：`Cortex-A55` 64 位 `1.5GHz` 八核
+- GPU：`32 GFLOPS`
+- BPU：`1XBayes-e@10TOPS`
+- 运行内存：`8GB`
+- 系统存储：`Micro SD` 卡插槽
+- USB 接口：`1` 个 USB `2.0`（`Type-C`）和 `4` 个 USB `3.0`（`Type-A`），以及 `1` 个调试串口（`Micro USB`）
+- 蓝牙：采用 `Bluetooth 5.4`
+- Wi-Fi 网络：支持 `802.11n` 无线，`2.4GHz/5GHz` 双频 `Wi-Fi 6`
+
+![OriginMan RDK X5-8GB](/assets/courses/originman/basic/rdk-1.png)
+
+### 小脑底板
+
+- 主控芯片：`MM32F103CBT6`，CPU 最高速度达 `96 MHz`
+- IMU 芯片：内置 `6` 轴 IMU，可进行实时姿态检测、加速度检测
+- 接口：总线舵机、`IIC`、`GPIO` 等接口，支持 `IIC` 协议通信
+- 其他板载资源：内置 AI 语音处理芯片和 `MEMS` 数字输出麦克风
+- 内置声卡功放：输出功率 `4Ω 3.2W @5V`
+- 系统内存：`32GB`
+
+## 2. 常用软件下载
+
+<table className="lesson-content-table">
+  <thead>
+    <tr>
+      <th>软件名称</th>
+      <th>下载链接</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rufus</td>
+      <td><a href="https://github.com/pbatard/rufus/releases/download/v3.20/rufus-3.20p.exe" target="_blank" rel="noreferrer">点击下载</a></td>
+      <td>SD 卡镜像烧写工具</td>
+    </tr>
+    <tr>
+      <td>balenaEtcher</td>
+      <td><a href="https://www.balena.io/etcher/" target="_blank" rel="noreferrer">点击下载</a></td>
+      <td>SD 卡镜像烧写工具</td>
+    </tr>
+    <tr>
+      <td>MobaXterm</td>
+      <td><a href="https://mobaxterm.mobatek.net/download-home-edition.html" target="_blank" rel="noreferrer">点击下载</a></td>
+      <td>远程访问工具箱，可安装绿色版本</td>
+    </tr>
+    <tr>
+      <td>CH340 串口驱动</td>
+      <td><a href="https://pan.baidu.com/s/1y08UI7O0758t_GnuLOldOw?pwd=gyh1" target="_blank" rel="noreferrer">点击下载</a></td>
+      <td>CH340 串口驱动</td>
+    </tr>
+    <tr>
+      <td>WonderRDK</td>
+      <td><a href="https://pan.baidu.com/s/1Lwm0w1e8cAWxSJ6MGCdbHQ?pwd=GYH1" target="_blank" rel="noreferrer">点击下载</a></td>
+      <td>手机远程控制 APP</td>
+    </tr>
+    <tr>
+      <td>xburn-gui</td>
+      <td><a href="https://pan.baidu.com/s/1izatis_ocDsh-nrUHxo78A?pwd=home" target="_blank" rel="noreferrer">点击下载</a></td>
+      <td>MiniBoot 升级工具与固件包</td>
+    </tr>
+  </tbody>
+</table>
+
+## 3. SD 卡镜像安装与备份
+
+内容待上传。
+

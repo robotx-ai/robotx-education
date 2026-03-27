@@ -5,6 +5,10 @@ import OpenClawStarterStudioEn from "@/content/courses/ai/foundation/openclaw/st
 import OpenClawStarterStudioZh from "@/content/courses/ai/foundation/openclaw/starter-studio/zh.mdx";
 import OriginmanOverviewEn from "@/content/courses/robot/humanoid/originman/overview/en.mdx";
 import OriginmanOverviewZh from "@/content/courses/robot/humanoid/originman/overview/zh.mdx";
+import OriginmanFoundationLesson1En from "@/content/courses/robot/humanoid/originman/foundation-basics-lesson-1/en.mdx";
+import OriginmanFoundationLesson1Zh from "@/content/courses/robot/humanoid/originman/foundation-basics-lesson-1/zh.mdx";
+import OriginmanFoundationLesson2En from "@/content/courses/robot/humanoid/originman/foundation-basics-lesson-2/en.mdx";
+import OriginmanFoundationLesson2Zh from "@/content/courses/robot/humanoid/originman/foundation-basics-lesson-2/zh.mdx";
 import OriginmanQuickStartEn from "@/content/courses/robot/humanoid/originman/quick-start/en.mdx";
 import OriginmanQuickStartZh from "@/content/courses/robot/humanoid/originman/quick-start/zh.mdx";
 import OriginmanUserGuideEn from "@/content/courses/robot/humanoid/originman/user-guide/en.mdx";
@@ -22,6 +26,14 @@ export const lessonContentRegistry: Record<
   "originman-home": {
     en: OriginmanOverviewEn,
     zh: OriginmanOverviewZh,
+  },
+  "originman-foundation-lesson-01": {
+    en: OriginmanFoundationLesson1En,
+    zh: OriginmanFoundationLesson1Zh,
+  },
+  "originman-foundation-lesson-02": {
+    en: OriginmanFoundationLesson2En,
+    zh: OriginmanFoundationLesson2Zh,
   },
   "originman-quick-start": {
     en: OriginmanQuickStartEn,

@@ -1,0 +1,84 @@
+# Course Introduction and OriginMan Hardware Overview
+
+This lesson introduces the assembled OriginMan product package, the major hardware components, commonly used support software, and the future SD card imaging workflow.
+
+## 1. Product Checklist
+
+![OriginMan parts list](/assets/courses/originman/basic/product-list.jpg)
+
+OriginMan is delivered fully assembled.
+
+The images referenced in the original lesson have not been added yet. You can insert them later when the final assets are available.
+
+### OriginMan Main Controller (`RDK X5-8GB`)
+
+D-Robotics `RDK X5` uses the `Sunrise 5` intelligent computing chip and delivers up to `10 TOPS` of compute performance. It is a general-purpose development kit designed for intelligent computing and robotics applications. The board offers rich interfaces, a development-friendly setup, and support for complex models and modern algorithms such as `Transformer`, `RWKV`, `Occupancy`, and `Stereo Perception`, helping intelligent applications move into practice faster.
+
+- CPU: `Cortex-A55` 64-bit `1.5GHz`, 8 cores
+- GPU: `32 GFLOPS`
+- BPU: `1XBayes-e@10TOPS`
+- Memory: `8GB`
+- System storage: `Micro SD` card slot
+- USB ports: `1` USB `2.0` (`Type-C`), `4` USB `3.0` (`Type-A`), and `1` debug serial port (`Micro USB`)
+- Bluetooth: `Bluetooth 5.4`
+- Wi-Fi: `802.11n`, `2.4GHz/5GHz` dual-band `Wi-Fi 6`
+
+![OriginMan RDK X5-8GB](/assets/courses/originman/basic/rdk-1.png)
+
+### Cerebellum Baseboard
+
+- Main control chip: `MM32F103CBT6`, with a CPU speed of up to `96 MHz`
+- IMU chip: built-in `6-axis IMU` for real-time posture and acceleration sensing
+- Interfaces: bus servo, `IIC`, `GPIO`, and other interfaces, with support for `IIC` protocol communication
+- Additional onboard resources: built-in AI voice processing chip and `MEMS` digital-output microphone
+- Built-in audio amplifier: output power `4Ω 3.2W @5V`
+- System memory: `32GB`
+
+## 2. Commonly Used Software Downloads
+
+<table className="lesson-content-table">
+  <thead>
+    <tr>
+      <th>Software</th>
+      <th>Download Link</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rufus</td>
+      <td><a href="https://github.com/pbatard/rufus/releases/download/v3.20/rufus-3.20p.exe" target="_blank" rel="noreferrer">Download</a></td>
+      <td>SD card image flashing tool</td>
+    </tr>
+    <tr>
+      <td>balenaEtcher</td>
+      <td><a href="https://www.balena.io/etcher/" target="_blank" rel="noreferrer">Download</a></td>
+      <td>SD card image flashing tool</td>
+    </tr>
+    <tr>
+      <td>MobaXterm</td>
+      <td><a href="https://mobaxterm.mobatek.net/download-home-edition.html" target="_blank" rel="noreferrer">Download</a></td>
+      <td>Remote access toolbox, with a portable version available</td>
+    </tr>
+    <tr>
+      <td>CH340 Serial Driver</td>
+      <td><a href="https://pan.baidu.com/s/1y08UI7O0758t_GnuLOldOw?pwd=gyh1" target="_blank" rel="noreferrer">Download</a></td>
+      <td>CH340 serial driver</td>
+    </tr>
+    <tr>
+      <td>WonderRDK</td>
+      <td><a href="https://pan.baidu.com/s/1Lwm0w1e8cAWxSJ6MGCdbHQ?pwd=GYH1" target="_blank" rel="noreferrer">Download</a></td>
+      <td>Mobile remote-control app</td>
+    </tr>
+    <tr>
+      <td>xburn-gui</td>
+      <td><a href="https://pan.baidu.com/s/1izatis_ocDsh-nrUHxo78A?pwd=home" target="_blank" rel="noreferrer">Download</a></td>
+      <td>MiniBoot upgrade tool and firmware package</td>
+    </tr>
+  </tbody>
+</table>
+
+## 3. SD Card Image Installation and Backup
+
+Content upload is pending.
+

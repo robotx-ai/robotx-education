@@ -1,0 +1,130 @@
+# 系统开机、充电与安全操作
+
+本课将介绍 OriginMan 的首次开机流程、联网方式，以及如何安全地为机器人充电。
+
+## 1. 开机联网
+
+大家打开 OriginMan 包装盒之后就可以看到 OriginMan 的真身了。每一台 OriginMan 出厂时，我们都为它注入了灵魂，也就是“出厂镜像”。
+
+所以当大家取出 OriginMan 之后，便可以拨动 OriginMan 背部下方的拨动开关，将其启动起来。
+
+启动成功后，可以看到 OriginMan 胸口的灯环从白色变成了彩色，紧接着 OriginMan 说出“你好，我是 OriginMan”。看到如上动作代表 OriginMan 已经成功启动镜像。
+
+随后可以注意到 OriginMan 的背部，如果已经连接网络，背部的 OLED 显示屏将会显示你需要连接的 IP 地址；如果没有连接网络，则需要接入网线，完成 OriginMan 和本地 PC 的联网配置。
+
+<iframe
+  src="//player.bilibili.com/player.html?aid=114080840946901&bvid=BV1iN9GYiEZC&cid=28619311660&page=1&autoplay=1"
+  title="OriginMan 演示"
+  allowFullScreen
+/>
+
+## 2. 网络配置与远程开发方法
+
+OriginMan 在出厂时已经烧录好最新镜像，镜像版本为 Desktop 版本，默认关闭部分功能，连接网络后可通过终端工具进行配置。
+
+### 2.1 有线登录
+
+在配置 OriginMan 的网络时，大家可以选择使用套件中的网线进行配置。为了远程连接，这里推荐使用 MobaXterm。
+
+1. 先使用网线连接机器人端的网口与你的笔记本电脑网口。
+2. 然后打开 OriginMan 的电源开关。
+3. 以 Win11 系统为例，打开网络设置，可以看到有一个新的 Internet 或以太网连接可以配置。
+
+OriginMan 的初始静态 IP 地址为 `192.168.127.10`，所以需要将此 Internet 设置为同一网段下的其他地址。
+
+设置后便可打开 MobaXterm，点击左上角 `Session`，选择 `SSH`，在远程连接中填入 `192.168.127.10`。
+![OriginMan connect internet 1](/assets/courses/originman/basic/connect-internet-1.png)
+
+进入后即可看到终端需要输入账号密码，默认超级用户为 `root`，普通用户为 `sunrise`，密码与用户名一致，即 `root` 或 `sunrise`。
+![OriginMan connect internet 1](/assets/courses/originman/basic/connect-internet-2.png)
+
+> 登录时密码是不可见的，只需输入正确密码后按回车即可。
+
+进入系统后，机器人默认处于热点模式。您可以先切换回 Station 模式，再连接 Wi-Fi 网络。
+
+```bash
+# 如需切换回 Station 模式，按以下方式进行，仅当前周期有效，重启之后会自动切换成 AP 模式
+
+# 停止 hostapd
+killall -9 hostapd
+
+# 清除 wlan0 的地址
+ip addr flush dev wlan0
+sleep 0.5
+ifconfig wlan0 down
+sleep 1
+ifconfig wlan0 up
+
+# 重启 wpa_supplicant
+systemctl unmask wpa_supplicant
+systemctl restart wpa_supplicant
+
+# 重装 Wi-Fi 驱动
+rmmod aic8800_fdrv
+modprobe aic8800_fdrv
+
+# 执行完毕后就可以扫描然后连接 Wi-Fi
+sudo nmcli device wifi rescan  # 扫描wifi网络
+sudo nmcli device wifi list  # 列出找到的wifi网络
+sudo wifi_connect "SSID" "PASSWD" # 连接某指定的wifi网络
+```
+
+找到你的目标 Wi-Fi，使用 `wifi_connect` 指令即可成功连接无线。使用此方法设置的网络仅当前有效，关机重启后会自动切换为 AP 模式。
+
+### 机器人桌面
+
+配置完成 OriginMan 网络后，需在终端输入以下命令开启 VNC 服务通信。
+
+```bash
+sudo apt-get install dbus-x11  # 安装 dbus-x11 通信软件包
+```
+
+开启后，如果有一台显示屏，可以将 OriginMan 的显示接口与显示屏通过 HDMI 线缆连接，进入后即可看到桌面画面。
+
+![OriginMan enter desktop](/assets/courses/originman/basic/rdk-desktop-1.png)
+
+如果没有显示屏，也可以打开 MobaXterm，点击左上角 `Session`，选择 `VNC`，在远程连接中填入当前机器人的 IP 地址。
+
+![OriginMan connect through MobaXterm](/assets/courses/originman/basic/rdk-desktop-2.png)
+
+随后填入密码，VNC 的登录密码为 `12345678`，便可以进入内置桌面。
+
+![OriginMan enter built in desktop](/assets/courses/originman/basic/rdk-desktop-3.png)
+
+那么如何知道机器人的 IP 地址呢？可以查看 OriginMan 背部的 OLED 显示屏。连接 Wi-Fi 之后，原本未联网时显示的热点 SSID 会变成已连接的 Wi-Fi 名称，而 SSID 下方显示的 IP 地址，就是进行无线登录时需要使用的地址。
+
+![OriginMan find ip address](/assets/courses/originman/basic/SSID.jpg)
+
+### 2.2 无线登录
+
+无线登录需要将登录设备连接到与 OriginMan 相同的局域网下。
+
+在完成网络配置以后，可以使用联网后的 IP 地址进行远程登录。这个地址可以直接从机器人背后的屏幕上查看到。
+
+查看到 IP 地址后，便可打开 MobaXterm，点击左上角 `Session`，选择 `SSH`，在远程连接中填入机器人背后的 IP 地址，点击 `OK` 即可登录系统。
+
+![OriginMan wireless log in](/assets/courses/originman/basic/wireless-connect.png)
+
+### 2.3 串口登录
+
+串口登录也是进入 OriginMan 系统的方式之一。此时需要一根 Micro USB 线缆，将 Micro USB 一端接入 OriginMan 主控 `RDK X5` 从左至右数第三个 USB 口，另外一端连接你的笔记本电脑。
+
+随后打开 OriginMan 电源开关，然后进入 MobaXterm，点击左上角 `Session` 中的 `Serial`，波特率选择 `115200`，即可成功登录系统。
+
+> 如果是在 OriginMan 上电状态下使用串口登录，终端中可能会看到黑屏。此时需要输入用户名 `root`，随后会看到输入密码的提示，输入密码后即可进入终端。
+
+## 3. 机器人充电方法
+
+OriginMan 的电源为 `11.1V 2500mAh 10C` 动力锂电池，支持边充电边开机使用。
+
+OriginMan 充电口位于其拨动开关旁边，需要使用指定的充电器方可充电，否则容易导致电路损坏或者无法正常充电。
+
+### 具体方法
+
+1. 将充电器 DC 口插到 OriginMan 的充电口上。
+2. 将充电器的 AC 口插到 `220V` 市电插座上。
+3. 充电器上的指示灯显示为红色时，表示正在充电中。
+4. 完成充电后，充电器上的 LED 灯会变为绿色。
+5. 充电结束后，可以拔出充电器。
+
+![OriginMan Charging](/assets/courses/originman/basic/originman-charging-1.png)

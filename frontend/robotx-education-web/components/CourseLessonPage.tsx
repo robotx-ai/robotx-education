@@ -38,6 +38,7 @@ export default function CourseLessonPage({
     ? ([lessonModules.en ? "en" : null, lessonModules.zh ? "zh" : null].filter(Boolean) as Locale[])
     : getLessonSupportedLocales(lesson);
   const [languageNoticeDismissed, setLanguageNoticeDismissed] = useState(false);
+  const [comingSoonDismissed, setComingSoonDismissed] = useState(false);
 
   const resolvedLocale = useMemo<Locale | null>(() => {
     if (supportedLocales.includes(locale)) return locale;
@@ -48,10 +49,12 @@ export default function CourseLessonPage({
 
   useEffect(() => {
     setLanguageNoticeDismissed(false);
+    setComingSoonDismissed(false);
   }, [lesson.id, locale, resolvedLocale]);
 
   const LessonContent = lessonModules && resolvedLocale ? lessonModules[resolvedLocale] : null;
   const lessonPdfUrl = getLessonPdfUrl(lesson);
+  const isComingSoonLesson = !LessonContent && !lessonPdfUrl;
 
   const pages = course.lessons.map((entry) => ({
     label: pickLocaleText(entry.title, locale),
@@ -63,7 +66,7 @@ export default function CourseLessonPage({
   const isPaid = course.access === "paid";
   const isFallbackLocale = Boolean(resolvedLocale && resolvedLocale !== locale);
 
-  if ((!LessonContent && !lessonPdfUrl) || !resolvedLocale) {
+  if (!resolvedLocale) {
     return null;
   }
 
@@ -157,8 +160,33 @@ export default function CourseLessonPage({
                   {t("coursesUi.openLessonPdf")}
                 </a>
               </section>
-            ) : null}
+            ) : (
+              <section className="course-coming-soon-panel">
+                <h2 className="lesson-heading lesson-heading-2">{t("coursesUi.comingSoonTitle")}</h2>
+                <p className="lesson-copy">{t("coursesUi.comingSoonBody")}</p>
+                <p className="lesson-copy">{pickLocaleText(lesson.summary, locale)}</p>
+                <Link href={getCoursePath(subject, course)} className="course-lesson-cta lesson-pdf-open-link">
+                  {t("coursesUi.backToCourse")}
+                </Link>
+              </section>
+            )}
           </CourseArticleTemplate>
+
+          {isComingSoonLesson && !comingSoonDismissed && (
+            <div className="course-language-modal-overlay">
+              <div className="course-language-modal">
+                <h2>{t("coursesUi.comingSoonTitle")}</h2>
+                <p>{t("coursesUi.comingSoonModalBody")}</p>
+                <button
+                  type="button"
+                  className="course-gate-primary course-language-modal-button"
+                  onClick={() => setComingSoonDismissed(true)}
+                >
+                  {t("coursesUi.iUnderstand")}
+                </button>
+              </div>
+            </div>
+          )}
 
           {isFallbackLocale && !languageNoticeDismissed && (
             <div className="course-language-modal-overlay">

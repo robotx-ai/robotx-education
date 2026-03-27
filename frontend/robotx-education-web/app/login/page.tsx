@@ -69,7 +69,7 @@ function LoginPageContent() {
 
   return (
     <main className="relative flex min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/assets/home/openclaw-learn.webp')] bg-cover bg-center" />
+      <div className="absolute inset-0 bg-[url('/assets/courses/originman/originman-wave-1.png')] xl:bg-[url('/assets/home/openclaw-learn.webp')] bg-cover bg-center" />
       <div className="absolute inset-0 bg-white/70" />
       <form
         onSubmit={handleLogin}

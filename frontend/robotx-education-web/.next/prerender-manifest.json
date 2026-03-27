@@ -266,6 +266,486 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/courses/robot/humanoid/originman/feature-development/lesson-1": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/feature-development/lesson-1.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/feature-development/lesson-2": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/feature-development/lesson-2.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/feature-development/lesson-3": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/feature-development/lesson-3.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/feature-development/lesson-4": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/feature-development/lesson-4.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/feature-development/lesson-5": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/feature-development/lesson-5.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/feature-development/lesson-6": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/feature-development/lesson-6.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/foundation-basics/lesson-1": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/foundation-basics/lesson-1.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/foundation-basics/lesson-2": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/foundation-basics/lesson-2.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/foundation-basics/lesson-3": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/foundation-basics/lesson-3.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/foundation-basics/lesson-4": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/foundation-basics/lesson-4.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/hardware-and-drivers/lesson-1": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/hardware-and-drivers/lesson-1.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/hardware-and-drivers/lesson-2": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/hardware-and-drivers/lesson-2.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/hardware-and-drivers/lesson-3": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/hardware-and-drivers/lesson-3.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/hardware-and-drivers/lesson-4": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/hardware-and-drivers/lesson-4.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/hardware-and-drivers/lesson-5": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/hardware-and-drivers/lesson-5.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/hardware-and-drivers/lesson-6": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/hardware-and-drivers/lesson-6.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/integrated-projects/lesson-1": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/integrated-projects/lesson-1.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/integrated-projects/lesson-2": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/integrated-projects/lesson-2.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/integrated-projects/lesson-3": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/integrated-projects/lesson-3.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/integrated-projects/lesson-4": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
+      "dataRoute": "/courses/robot/humanoid/originman/integrated-projects/lesson-4.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/courses/robot/humanoid/originman/overview/lesson-1": {
       "experimentalBypassFor": [
         {
@@ -329,6 +809,102 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/courses/robot/humanoid/originman/[course]/[lesson]",
       "dataRoute": "/courses/robot/humanoid/originman/user-guide/lesson-1.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/feature-development": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]",
+      "dataRoute": "/courses/robot/humanoid/originman/feature-development.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/foundation-basics": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]",
+      "dataRoute": "/courses/robot/humanoid/originman/foundation-basics.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/hardware-and-drivers": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]",
+      "dataRoute": "/courses/robot/humanoid/originman/hardware-and-drivers.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/courses/robot/humanoid/originman/integrated-projects": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/courses/robot/humanoid/originman/[course]",
+      "dataRoute": "/courses/robot/humanoid/originman/integrated-projects.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -1223,7 +1799,7 @@
       ],
       "routeRegex": "^/courses/ai/foundation/openclaw/([^/]+?)/([^/]+?)(?:/)?$",
       "dataRoute": "/courses/ai/foundation/openclaw/[course]/[lesson].rsc",
-      "fallback": null,
+      "fallback": false,
       "fallbackRouteParams": [],
       "dataRouteRegex": "^/courses/ai/foundation/openclaw/([^/]+?)/([^/]+?)\\.rsc$",
       "prefetchDataRoute": null,
@@ -1250,7 +1826,7 @@
       ],
       "routeRegex": "^/courses/ai/foundation/openclaw/([^/]+?)(?:/)?$",
       "dataRoute": "/courses/ai/foundation/openclaw/[course].rsc",
-      "fallback": null,
+      "fallback": false,
       "fallbackRouteParams": [],
       "dataRouteRegex": "^/courses/ai/foundation/openclaw/([^/]+?)\\.rsc$",
       "prefetchDataRoute": null,
@@ -1277,7 +1853,7 @@
       ],
       "routeRegex": "^/courses/robot/humanoid/originman/([^/]+?)/([^/]+?)(?:/)?$",
       "dataRoute": "/courses/robot/humanoid/originman/[course]/[lesson].rsc",
-      "fallback": null,
+      "fallback": false,
       "fallbackRouteParams": [],
       "dataRouteRegex": "^/courses/robot/humanoid/originman/([^/]+?)/([^/]+?)\\.rsc$",
       "prefetchDataRoute": null,
@@ -1304,7 +1880,7 @@
       ],
       "routeRegex": "^/courses/robot/humanoid/originman/([^/]+?)(?:/)?$",
       "dataRoute": "/courses/robot/humanoid/originman/[course].rsc",
-      "fallback": null,
+      "fallback": false,
       "fallbackRouteParams": [],
       "dataRouteRegex": "^/courses/robot/humanoid/originman/([^/]+?)\\.rsc$",
       "prefetchDataRoute": null,
@@ -1331,7 +1907,7 @@
       ],
       "routeRegex": "^/courses/robot/ros/robot\\-operating\\-system/([^/]+?)/([^/]+?)(?:/)?$",
       "dataRoute": "/courses/robot/ros/robot-operating-system/[course]/[lesson].rsc",
-      "fallback": null,
+      "fallback": false,
       "fallbackRouteParams": [],
       "dataRouteRegex": "^/courses/robot/ros/robot\\-operating\\-system/([^/]+?)/([^/]+?)\\.rsc$",
       "prefetchDataRoute": null,
@@ -1358,7 +1934,7 @@
       ],
       "routeRegex": "^/courses/robot/ros/robot\\-operating\\-system/([^/]+?)(?:/)?$",
       "dataRoute": "/courses/robot/ros/robot-operating-system/[course].rsc",
-      "fallback": null,
+      "fallback": false,
       "fallbackRouteParams": [],
       "dataRouteRegex": "^/courses/robot/ros/robot\\-operating\\-system/([^/]+?)\\.rsc$",
       "prefetchDataRoute": null,

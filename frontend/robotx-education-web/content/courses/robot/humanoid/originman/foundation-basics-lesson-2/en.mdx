@@ -1,0 +1,133 @@
+# System Boot, Charging, and Safe Operation
+
+This lesson introduces the first startup workflow for OriginMan, how to bring the robot onto a network, and how to charge it safely.
+
+## 1. Boot and Network Awareness
+
+After opening the OriginMan package, you will see the robot itself. Each OriginMan ships with a preinstalled factory image, which is the software foundation used for first boot and initial development.
+
+After taking the robot out of the box, toggle the power switch on the lower back of OriginMan to start the system.
+
+When startup succeeds, the chest light ring changes from white to a colorful pattern, and then OriginMan says, "Hello, I'm OriginMan." This sequence indicates that the factory image has booted successfully.
+
+Next, check the back of the robot. If the device is already connected to a network, the OLED screen on the back will display the IP address you need for remote connection. If the robot is not connected yet, you will need to connect an Ethernet cable and finish the network setup between OriginMan and your local PC.
+
+<iframe
+  src="//player.bilibili.com/player.html?aid=114080840946901&bvid=BV1iN9GYiEZC&cid=28619311660&page=1&autoplay=1"
+  title="OriginMan 演示"
+  allowFullScreen
+/>
+
+## 2. Network Configuration and Remote Development Methods
+
+OriginMan ships with the latest factory image already flashed. The installed image is the Desktop version. Some features are off by default and can be configured after the robot is connected to a network through terminal tools.
+
+### 2.1 Wired Login
+
+When configuring the network, you can use the Ethernet cable included in the kit. For remote access, MobaXterm is a practical choice on Windows.
+
+1. Connect the robot Ethernet port to the Ethernet port on your laptop with a network cable.
+2. Turn on the OriginMan power switch.
+3. Open your network settings. On Windows 11, you should see a new Internet or Ethernet connection available for configuration.
+
+The default static IP address of OriginMan is `192.168.127.10`, so your computer should be set to another address in the same subnet.
+
+After that, open MobaXterm, click `Session`, choose `SSH`, and enter `192.168.127.10` as the remote host.
+![OriginMan connect internet 1](/assets/courses/originman/basic/connect-internet-1.png)
+
+When the terminal opens, enter the account and password. The default superuser is `root`, and the standard user is `sunrise`. The password matches the username, so use either `root` or `sunrise`.
+![OriginMan connect internet 1](/assets/courses/originman/basic/connect-internet-2.png)
+
+> Password input is invisible in the terminal. Enter the correct password and press Enter even though no characters appear on screen.
+
+After login, the robot is in hotspot mode by default. You can switch it back to Station mode and then connect to Wi-Fi with the following commands.
+
+```bash
+# To switch back to Station mode, run the following commands.
+# This only applies to the current power cycle. After reboot, the robot returns to AP mode automatically.
+
+# Stop hostapd
+killall -9 hostapd
+
+# Clear the wlan0 address
+ip addr flush dev wlan0
+sleep 0.5
+ifconfig wlan0 down
+sleep 1
+ifconfig wlan0 up
+
+# Restart wpa_supplicant
+systemctl unmask wpa_supplicant
+systemctl restart wpa_supplicant
+
+# Reload the Wi-Fi driver
+rmmod aic8800_fdrv
+modprobe aic8800_fdrv
+
+# Scan and connect to Wi-Fi
+sudo nmcli device wifi rescan # scan available wifi
+sudo nmcli device wifi list # list available wifi
+sudo wifi_connect "SSID" "PASSWD" # connect to one wifi
+```
+
+Find your target Wi-Fi network and use the `wifi_connect` command to connect to it. This connection method is only valid for the current session. After shutdown and reboot, the robot returns to AP mode automatically.
+
+### Robot Desktop
+
+After the OriginMan network is configured, run the following command in the terminal to enable VNC communication.
+
+```bash
+sudo apt-get install dbus-x11  # Install dbus-x11 communication package 
+```
+
+If you have an external monitor, connect it to the OriginMan display interface using an HDMI cable to view the desktop directly.
+
+![OriginMan enter built in desktop](/assets/courses/originman/basic/rdk-desktop-1.png)
+
+If you do not have a monitor, open MobaXterm, click `Session`, choose `VNC`, and enter the current robot IP address.
+
+![OriginMan connect through MobaXterm](/assets/courses/originman/basic/rdk-desktop-2.png)
+
+Then enter the VNC password `12345678` to access the built-in desktop.
+
+![OriginMan enter built in desktop](/assets/courses/originman/basic/rdk-desktop-3.png)
+
+To find the current robot IP address, check the OLED screen on the back of OriginMan. After Wi-Fi is connected, the displayed SSID changes from the default hotspot label to your connected Wi-Fi name. The IP address shown below that SSID is the one used for wireless login.
+
+![OriginMan find ip address](/assets/courses/originman/basic/SSID.jpg)
+
+### 2.2 Wireless Login
+
+Wireless login requires your computer and OriginMan to be connected to the same local network.
+
+After network configuration is complete, you can log in remotely by using the IP address assigned to the robot. This address can be read directly from the screen on the back of OriginMan.
+
+Once you have the IP address, open MobaXterm, click `Session`, choose `SSH`, and enter the IP address shown on the robot. Click `OK` to log in.
+
+![OriginMan wireless log in](/assets/courses/originman/basic/wireless-connect.png)
+
+
+### 2.3 Serial Login
+
+Serial login is another way to access the OriginMan system. You will need a Micro USB cable. Connect one end to the third USB port from the left on the OriginMan main controller `RDK X5`, and connect the other end to your laptop.
+
+Then power on OriginMan and open MobaXterm. Click `Session`, choose `Serial`, and set the baud rate to `115200`. After that, you can log in successfully.
+
+> If you connect by serial while OriginMan is already powered on, the terminal may appear as a black screen at first. Enter the username `root`, then wait for the password prompt, enter the password, and you will reach the terminal normally.
+
+## 3. How to Charge the Robot
+
+OriginMan uses an `11.1V 2500mAh 10C` lithium battery and supports charging while powered on.
+
+The charging port is located beside the toggle switch. Use only the specified charger. Using the wrong charger may damage the circuit or prevent charging.
+
+### Charging Steps
+
+1. Insert the DC connector of the charger into the OriginMan charging port.
+2. Plug the AC connector of the charger into a `220V` wall outlet.
+3. When charging is active, the charger light shows red.
+4. When charging is complete, the LED changes to green.
+5. Unplug the charger after charging is finished.
+
+![OriginMan Charging](/assets/courses/originman/basic/originman-charging-1.png)
+
